@@ -15,6 +15,7 @@ import TeamPage from "./components/Pages/03-TeamPage";
 //import ArticlesPage from "./components/Pages/08-ArticlesPage";
 //import NewsPage from "./components/Pages/09-NewsPage";
 import ContactPage from "./components/Pages/10-ContactPage";
+import StateList from "./components/Organisms/StateList"
 
 import {connect} from "react-redux";
 
@@ -57,6 +58,9 @@ function App() {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+          <li>
+            <Link to="/states">States</Link>
+          </li>
         </ul>
       </header>
       <Switch>
@@ -72,7 +76,10 @@ function App() {
           </Route>
           <Route path='/contact'>
             <ContactPage/>
-          </Route>      
+          </Route>   
+          <Route path='/states'>
+            <StateList/>
+          </Route>   
 
 
       </Switch>
