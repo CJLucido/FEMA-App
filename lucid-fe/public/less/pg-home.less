@@ -1,0 +1,125 @@
+section#home
+.grid-home{
+grid-template-columns: .5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows: auto auto auto;
+display: grid;
+ margin: 1em;
+ grid-gap: 1em;
+ min-height: 500px;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: center; 
+  background-color: rgb(95, 54, 86);
+
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-self: center
+    }
+
+}
+
+.grid-home .grid-box {
+display:grid;
+grid-template-rows: 1fr 1fr 1fr;
+background-color: rgb(187, 106, 169);
+}
+
+.s1-a-title{
+grid-column: auto / span 4;
+grid-row: 1 / span 1;
+
+h2{
+    color: #F9F1F1;
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  }
+}
+
+.s1-b-links{
+grid-column: 2 / span 4;
+grid-row: 2 / span 1;
+
+
+	// .meet{}
+	// .field{}
+	// .tech{}
+}
+.s1-c-grants-link{
+    //grid-column: 4 / span 2;
+grid-column: 4 / span 2;
+grid-row: 3 / span 1;
+}
+
+.s1-d-side-links{ //(articles, news, contact)
+grid-column: 7 /span 1;
+grid-row: 1 / span 3 ;
+display:grid;
+grid-template-rows: 1fr 1fr 1fr
+}
+
+.s1-e-mobile-links{
+display: none
+}
+
+// @media screen and (min-width: 500px) {
+//     .grid-home{
+//       grid-template-columns: 1fr; 
+//   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+//     }
+//   .s1-a-title{
+//   grid-column: 1/span 1;
+//   grid-row: 1/span 2;
+//   background-image: something
+//   }
+//   .s1-b-links{
+//   display:none
+//   }
+//   .s1-c-grants-link{
+//   display:none
+//   }
+  
+//   .s1-d-side-links{ 
+//   display:none
+//   }
+//   .s1-e-mobile-links{
+//   display: grid;
+//   grid-column: 1/ span 1;
+//   grid-row: 3/span 6
+//   }
+//   .grid-mission{
+//   display:none
+//   }
+//   .grid-team{
+//   display:none
+//   }
+//   .grid-fieldwork{
+//   display:none
+//   }
+//   .grid-technology{
+//   display:none
+//   }
+//   .grid-grants{
+//   display:none
+//   }
+//   .grid-articles{
+//   display:none
+//   }
+//   .grid-news{
+//   display:none
+//   }
+//   .grid-contact{
+//   display:none
+//   }
+//   }
+//   @media screen and (min-width: 800px) {
+//     .grid-home{
+//       grid-template-columns: 1fr 1fr 1fr;
+//   grid-template-rows: 1fr 3fr;
+//     }
+//   }
+  
+  

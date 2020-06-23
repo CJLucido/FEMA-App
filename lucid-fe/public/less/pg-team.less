@@ -1,0 +1,77 @@
+//This page should actually use flexbox for the overall layout if you want to team members to wrap up to S1-B as they are added. However, if it will only be 4 people shown then a sub section that just takes up that 1st column second row can be made for that forth person.
+
+
+section#team .grid-team{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+     margin: 1em;
+     grid-gap: 1em;
+     min-height: 50vw;
+    }
+
+    .flex-box {
+        display: flex;
+        justify-content: center; 
+        background-color: rgb(54, 58, 95);
+      
+          h2 {
+              display: flex;
+              justify-content: center;
+              align-self: center
+          }
+
+          p {
+            display: flex;
+            justify-content: center;
+            align-self: center
+          }
+      
+      }
+      
+    .grid-team .grid-box {
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background-color: rgb(187, 106, 169);
+      grid-gap: 1em;
+      }
+    
+    .s3-a-team-links{
+    grid-column: 1 / span 3;
+    grid-row: auto / span 1; //(is this going to work to carry the overflow?)
+    }
+    
+    .s3-b-team-statement{
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+    }
+    
+    .s3-c-team-link{
+        grid-column: auto / span 1;
+        grid-row: auto / span 1;
+    }
+
+    // @media screen and (min-width: 500px) {
+    //     .grid-team{
+    //       grid-template-columns: 1fr; 
+    //   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    //     }
+    //   .s3-a-title{     
+    //   grid-column: 1/ span 1;
+    //       grid-row: 1/ span 1;
+    //   }
+    //   .s3-b-team-statement{ 
+    //       display: none
+    //   }
+    //   .s3-c-team-links{ 
+    //       grid-column: 1/ span 1;
+    //       grid-row: 2/ span 7;
+    //   }
+    //   }
+    //   @media screen and (min-width: 800px) {
+    //     .grid-team{
+    //       grid-template-columns: 1fr 1fr 1fr;
+    //   grid-template-rows: 1fr 3fr;
+    //     }
+    //   }
+      
