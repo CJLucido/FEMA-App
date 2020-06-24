@@ -6,15 +6,15 @@ import './App.less';
 import {Route, Switch, Link} from "react-router-dom";
 
 import HomePage from "./components/Pages/01-HomePage";
-import MissionPage from "./components/Pages/02-MissionPage";
-import TeamPage from "./components/Pages/03-TeamPage";
+import StatesPage from "./components/Pages/02-StatesPage";
+//import TeamPage from "./components/Pages/03-TeamPage";
 //import TeamMember from "./components/Pages/04-TeamMember";
 //import FieldworkPage from "./components/Pages/05-FieldworkPage";
 //import TechPage from "./components/Pages/06-TechPage";
 //import GrantsPage from "./components/Pages/07-GrantsPage";
 //import ArticlesPage from "./components/Pages/08-ArticlesPage";
 //import NewsPage from "./components/Pages/09-NewsPage";
-import ContactPage from "./components/Pages/10-ContactPage";
+//import ContactPage from "./components/Pages/10-ContactPage";
 import StateList from "./components/Organisms/StateList"
 
 import {connect} from "react-redux";
@@ -47,37 +47,25 @@ function App() {
 
         <ul>
           <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/mission">Mission</Link>
-          </li>
-          <li>
-            <Link to="/team">Team</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/states">States</Link>
+          </li>
+          <li>
+            <Link to="/statesold">States</Link>
           </li>
         </ul>
       </header>
       <Switch>
 
-          <Route path='/home'>
+          <Route exact path='/'>
             <HomePage/>
           </Route>
-          <Route path='/mission'>
-            <MissionPage/>
-          </Route>
-          <Route path='/team'>
-            <TeamPage/>
-          </Route>
-          <Route path='/contact'>
-            <ContactPage/>
-          </Route>   
           <Route path='/states'>
+            <StatesPage/>
+          </Route>  
+          <Route path='/statesold'>
             <StateList/>
           </Route>   
 
