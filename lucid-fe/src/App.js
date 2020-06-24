@@ -47,7 +47,7 @@ function App() {
 
         <ul>
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/states">States</Link>
@@ -56,7 +56,7 @@ function App() {
       </header>
       <Switch>
 
-          <Route path='/home'>
+          <Route exact path='/'>
             <HomePage/>
           </Route>
           <Route path='/states'>

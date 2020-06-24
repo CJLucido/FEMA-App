@@ -10,8 +10,11 @@ import{
 
 //STYLE COMING FROM LESS CLASSES AND ANTD COMPONENTS
 
+//imgs
+import getStarted from "../../imgs/getStartedButton.svg"
+
 //PAGES
-//import {Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 //THIS FUNCTIONAL COMPONENT
 
@@ -25,17 +28,24 @@ function HomePage(props){
 
             <section id="home">
                 <div class="grid-home">
-                    <div class="flex-box s1-a-title">
-                    <h2>S1-A</h2>
+                    <div class="flex-box1 s1-a-title">
+                    <h2>Welcome to the DR history app!</h2>
                     </div>   
-                    <div class="grid-box s1-b-links">
-                    <h2>S1-B</h2>
-                    </div>
-                    <div class="flex-box s1-c-grants-link">
-                    <h2>S1-C</h2>
-                    </div>
-                    <div class="flex-box s1-d-side-links">
-                    <h2>S1-D</h2>
+                    <div class="grid-box s1-b-text">
+                        <div class="flex-box2 leftAlign1">
+                            <p>This app presents public information provided by several of FEMA’s APIs in a palatable format.</p>
+                        </div>
+                        <div class=" flex-box3 rightAlign1">
+                            <p>We currently support Disaster Declaration Summaries and Public Assistance Funded Project Details.</p>
+                        </div>
+                        <div class="flex-box2 leftAlign2">
+                            <p>For any feedback please contact the developer through https://cjlucido.netlify.app</p>
+                        </div>
+                        <div class=" flex-box3 rightAlign2">
+                            <Link to="/states">
+                            <img src={getStarted} alt="box whose corners don't meet surround text to make a button"/>
+                            </Link>
+                        </div>
                     </div>
                     {/* <div class="s1-e-mobile-links">
                         <a>Mission</a>
