@@ -6,7 +6,7 @@ import './App.less';
 import {Route, Switch, Link} from "react-router-dom";
 
 import HomePage from "./components/Pages/01-HomePage";
-//import MissionPage from "./components/Pages/02-MissionPage";
+import StatesPage from "./components/Pages/02-StatesPage";
 //import TeamPage from "./components/Pages/03-TeamPage";
 //import TeamMember from "./components/Pages/04-TeamMember";
 //import FieldworkPage from "./components/Pages/05-FieldworkPage";
@@ -52,6 +52,9 @@ function App() {
           <li>
             <Link to="/states">States</Link>
           </li>
+          <li>
+            <Link to="/statesold">States</Link>
+          </li>
         </ul>
       </header>
       <Switch>
@@ -60,6 +63,9 @@ function App() {
             <HomePage/>
           </Route>
           <Route path='/states'>
+            <StatesPage/>
+          </Route>  
+          <Route path='/statesold'>
             <StateList/>
           </Route>   
 
