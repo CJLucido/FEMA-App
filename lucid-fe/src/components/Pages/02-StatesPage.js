@@ -11,7 +11,7 @@ import{
 //STYLE COMING FROM LESS CLASSES AND ANTD COMPONENTS
 
 //PAGES
-//import {Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 //imgs
 import stateMessage from "../../imgs/stateMessageBox.svg";
@@ -78,171 +78,276 @@ function StatesPage(props){
     return(
         <div>
             <section id="states">
-                
-                    <div class="flex-box s2-a-title">
+                <div class="grid-states">
+                    <div class="flex-box-states s2-a-title">
                         <h1>DR Finder</h1>
                     </div>   
                     <div class="state-instructions-box">
                         <img src={stateMessage} alt="box with unclosed corners giving direction to choose a state from the list"/>
                     </div>
+                    
                     <div class="alabama">
+                    <Link to="/statesold">
                         <img src={alabamaButton} alt="circle surrounding state abbreviation" />
+                    </Link>
                     </div>
                     <div class="alaska">
+                       <Link to="/statesold">
                         <img src={alaskaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="arizona">
+                       <Link to="/statesold">
                         <img src={arizonaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="arkansas">
+                       <Link to="/statesold">
                         <img src={arkansasButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="california">
+                       <Link to="/statesold">
                         <img src={californiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="colorado">
+                       <Link to="/statesold">
                         <img src={coloradoButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="connecticut">
+                       <Link to="/statesold">
                         <img src={connecticutButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="delaware">
+                       <Link to="/statesold">
                         <img src={delawareButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="dc">
+                       <Link to="/statesold">
                         <img src={districtofcolombiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="florida">
+                       <Link to="/statesold">
                         <img src={floridaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="georgia">
+                       <Link to="/statesold">
                         <img src={georgiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="hawaii">
+                       <Link to="/statesold">
                         <img src={hawaiiButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="idaho">
+                       <Link to="/statesold">
                         <img src={idahoButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="illinois">
+                       <Link to="/statesold">
                         <img src={illinoisButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="indiana">
+                       <Link to="/statesold">
                         <img src={indianaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="iowa">
+                       <Link to="/statesold">
                         <img src={iowaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="kansas">
+                       <Link to="/statesold">
                         <img src={kansasButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="kentucky">
+                       <Link to="/statesold">
                         <img src={kentuckyButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="louisiana">
+                       <Link to="/statesold">
                         <img src={louisianaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="maine">
+                       <Link to="/statesold">
                         <img src={maineButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="maryland">
+                       <Link to="/statesold">
                         <img src={marylandButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="massachusetts">
+                       <Link to="/statesold">
                         <img src={massachusettsButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="michigan">
+                       <Link to="/statesold">
                         <img src={michiganButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="minnesota">
+                       <Link to="/statesold">
                         <img src={minnesotaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="mississippi">
+                       <Link to="/statesold">
                         <img src={mississippiButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="missouri">
+                       <Link to="/statesold">
                         <img src={missouriButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="montana">
+                       <Link to="/statesold">
                         <img src={montanaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="nebraska">
+                       <Link to="/statesold">
                         <img src={nebraskaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="nevada">
+                       <Link to="/statesold">
                         <img src={nevadaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="newhampshire">
+                       <Link to="/statesold">
                         <img src={newhampshireButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="newjersey">
+                       <Link to="/statesold">
                         <img src={newjerseyButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="newmexico">
+                       <Link to="/statesold">
                         <img src={newmexicoButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="newyork">
+                       <Link to="/statesold">
                         <img src={newyorkButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="northcarolina">
+                       <Link to="/statesold">
                         <img src={northcarolinaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="northdakota">
+                       <Link to="/statesold">
                         <img src={northdakotaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="ohio">
+                       <Link to="/statesold">
                         <img src={ohioButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="oklahoma">
+                       <Link to="/statesold">
                         <img src={oklahomaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="oregon">
+                       <Link to="/statesold">
                         <img src={oregonButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="pennsylvania">
+                       <Link to="/statesold">
                         <img src={pennsylvaniaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="puertorico">
+                       <Link to="/statesold">
                         <img src={puertoricoButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="rhodeisland">
+                       <Link to="/statesold">
                         <img src={rhodeislandButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="southcarolina">
+                       <Link to="/statesold">
                         <img src={southcarolinaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="southdakota">
+                       <Link to="/statesold">
                         <img src={southdakotaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="tennessee">
+                       <Link to="/statesold">
                         <img src={tennesseeButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="texas">
+                       <Link to="/statesold">
                         <img src={texasButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="utah">
+                       <Link to="/statesold">
                         <img src={utahButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="vermont">
+                       <Link to="/statesold">
                         <img src={vermontButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="virginia">
+                       <Link to="/statesold">
                         <img src={virginiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="washington">
+                       <Link to="/statesold">
                         <img src={washingtonButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="westvirginia">
+                       <Link to="/statesold">
                         <img src={westvirginiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="wisconson">
+                       <Link to="/statesold">
                         <img src={wisconsonButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
                     <div class="wyoming">
+                       <Link to="/statesold">
                         <img src={wyomingButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
 
-
+                   </div>
             </section>
         </div>
         

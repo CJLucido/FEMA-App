@@ -128,24 +128,27 @@ section#home .grid-home {
 section#states .grid-states {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   margin: 0em;
   grid-gap: 0em;
-  min-height: 120vw;
+  min-height: 160vw;
+  align-items: flex-end;
 }
 .state-instructions-box {
   grid-column: 3 / span 4;
   grid-row: 3 / span 2;
+  align-self: center;
 }
-.flex-box {
+.flex-box-states {
   display: flex;
   justify-content: center;
-  background-color: #465f36;
+  align-items: center;
 }
-.flex-box h2 {
+.flex-box-states h1 {
   display: flex;
   justify-content: center;
   align-self: center;
+  font-size: 8vw;
 }
 .s2-a-title {
   grid-column: 3 / span 4;
@@ -191,7 +194,7 @@ section#states .grid-states {
   grid-column: 2 / span 1;
   grid-row: 5 / span 1;
 }
-.districtofcolombia {
+.dc {
   grid-column: 3 / span 1;
   grid-row: 6 / span 1;
 }
@@ -254,6 +257,118 @@ section#states .grid-states {
 .minnesota {
   grid-column: 6 / span 1;
   grid-row: 11 / span 1;
+}
+.mississippi {
+  grid-column: 1 / span 1;
+  grid-row: 7 / span 1;
+}
+.missouri {
+  grid-column: 2 / span 1;
+  grid-row: 8 / span 1;
+}
+.montana {
+  grid-column: 3 / span 1;
+  grid-row: 9 / span 1;
+}
+.nebraska {
+  grid-column: 4 / span 1;
+  grid-row: 10 / span 1;
+}
+.nevada {
+  grid-column: 5 / span 1;
+  grid-row: 11 / span 1;
+}
+.newhampshire {
+  grid-column: 6 / span 1;
+  grid-row: 12 / span 1;
+}
+.newjersey {
+  grid-column: 1 / span 1;
+  grid-row: 8 / span 1;
+}
+.newmexico {
+  grid-column: 2 / span 1;
+  grid-row: 9 / span 1;
+}
+.newyork {
+  grid-column: 3 / span 1;
+  grid-row: 10 / span 1;
+}
+.northcarolina {
+  grid-column: 4 / span 1;
+  grid-row: 11 / span 1;
+}
+.northdakota {
+  grid-column: 5 / span 1;
+  grid-row: 12 / span 1;
+}
+.ohio {
+  grid-column: 6 / span 1;
+  grid-row: 13 / span 1;
+}
+.oklahoma {
+  grid-column: 1 / span 1;
+  grid-row: 9 / span 1;
+}
+.oregon {
+  grid-column: 2 / span 1;
+  grid-row: 10 / span 1;
+}
+.pennsylvania {
+  grid-column: 3 / span 1;
+  grid-row: 11 / span 1;
+}
+.puertorico {
+  grid-column: 4 / span 1;
+  grid-row: 12 / span 1;
+}
+.rhodeisland {
+  grid-column: 5 / span 1;
+  grid-row: 13 / span 1;
+}
+.southcarolina {
+  grid-column: 6 / span 1;
+  grid-row: 14 / span 1;
+}
+.southdakota {
+  grid-column: 1 / span 1;
+  grid-row: 10 / span 1;
+}
+.tennessee {
+  grid-column: 2 / span 1;
+  grid-row: 11 / span 1;
+}
+.texas {
+  grid-column: 3 / span 1;
+  grid-row: 12 / span 1;
+}
+.utah {
+  grid-column: 4 / span 1;
+  grid-row: 13 / span 1;
+}
+.vermont {
+  grid-column: 5 / span 1;
+  grid-row: 14 / span 1;
+}
+.virginia {
+  grid-column: 6 / span 1;
+  grid-row: 15 / span 1;
+}
+.washington {
+  grid-column: 1 / span 1;
+  grid-row: 11 / span 1;
+}
+.westvirginia {
+  grid-column: 2 / span 1;
+  grid-row: 12 / span 1;
+}
+.wisconson {
+  grid-column: 3 / span 1;
+  grid-row: 13 / span 1;
+}
+.wyoming {
+  grid-column: 4 / span 1;
+  grid-row: 14 / span 1;
 }
 section#team .grid-team {
   display: grid;

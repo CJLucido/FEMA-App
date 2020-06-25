@@ -53,7 +53,7 @@ function App() {
             <Link to="/states">States</Link>
           </li>
           <li>
-            <Link to="/statesold">States</Link>
+            <Link to="/statesold">DR Finder</Link>
           </li>
         </ul>
       </header>
