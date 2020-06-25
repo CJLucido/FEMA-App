@@ -86,160 +86,160 @@ function StatesPage(props){
                         <img src={stateMessage} alt="box with unclosed corners giving direction to choose a state from the list"/>
                     </div>
                     <div class="alabama">
-                        <img src={alabamaButton}/>
+                        <img src={alabamaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="alaska">
-                        <img src={alaskaButton}/>
+                        <img src={alaskaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="arizona">
-                        <img src={arizonaButton}/>
+                        <img src={arizonaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="arkansas">
-                        <img src={arkansasButton}/>
+                        <img src={arkansasButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="california">
-                        <img src={californiaButton}/>
+                        <img src={californiaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="colorado">
-                        <img src={coloradoButton}/>
+                        <img src={coloradoButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="connecticut">
-                        <img src={connecticutButton}/>
+                        <img src={connecticutButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="delaware">
-                        <img src={delawareButton}/>
+                        <img src={delawareButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="dc">
-                        <img src={districtofcolombiaButton}/>
+                        <img src={districtofcolombiaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="florida">
-                        <img src={floridaButton}/>
+                        <img src={floridaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="georgia">
-                        <img src={georgiaButton}/>
+                        <img src={georgiaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="hawaii">
-                        <img src={hawaiiButton}/>
+                        <img src={hawaiiButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="idaho">
-                        <img src={idahoButton}/>
+                        <img src={idahoButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="illinois">
-                        <img src={illinoisButton}/>
+                        <img src={illinoisButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="indiana">
-                        <img src={indianaButton}/>
+                        <img src={indianaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="iowa">
-                        <img src={iowaButton}/>
+                        <img src={iowaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="kansas">
-                        <img src={kansasButton}/>
+                        <img src={kansasButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="kentucky">
-                        <img src={kentuckyButton}/>
+                        <img src={kentuckyButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="louisiana">
-                        <img src={louisianaButton}/>
+                        <img src={louisianaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="maine">
-                        <img src={maineButton}/>
+                        <img src={maineButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="maryland">
-                        <img src={marylandButton}/>
+                        <img src={marylandButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="massachusetts">
-                        <img src={massachusettsButton}/>
+                        <img src={massachusettsButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="michigan">
-                        <img src={michiganButton}/>
+                        <img src={michiganButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="minnesota">
-                        <img src={minnesotaButton}/>
+                        <img src={minnesotaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="mississippi">
-                        <img src={mississippiButton}/>
+                        <img src={mississippiButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="missouri">
-                        <img src={missouriButton}/>
+                        <img src={missouriButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="montana">
-                        <img src={montanaButton}/>
+                        <img src={montanaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="nebraska">
-                        <img src={nebraskaButton}/>
+                        <img src={nebraskaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="nevada">
-                        <img src={nevadaButton}/>
+                        <img src={nevadaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="newhampshire">
-                        <img src={newhampshireButton}/>
+                        <img src={newhampshireButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="newjersey">
-                        <img src={newjerseyButton}/>
+                        <img src={newjerseyButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="newmexico">
-                        <img src={newmexicoButton}/>
+                        <img src={newmexicoButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="newyork">
-                        <img src={newyorkButton}/>
+                        <img src={newyorkButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="northcarolina">
-                        <img src={northcarolinaButton}/>
+                        <img src={northcarolinaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="northdakota">
-                        <img src={northdakotaButton}/>
+                        <img src={northdakotaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="ohio">
-                        <img src={ohioButton}/>
+                        <img src={ohioButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="oklahoma">
-                        <img src={oklahomaButton}/>
+                        <img src={oklahomaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="oregon">
-                        <img src={oregonButton}/>
+                        <img src={oregonButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="pennsylvania">
-                        <img src={pennsylvaniaButton}/>
+                        <img src={pennsylvaniaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="puertorico">
-                        <img src={puertoricoButton}/>
+                        <img src={puertoricoButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="rhodeisland">
-                        <img src={rhodeislandButton}/>
+                        <img src={rhodeislandButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="southcarolina">
-                        <img src={southcarolinaButton}/>
+                        <img src={southcarolinaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="southdakota">
-                        <img src={southdakotaButton}/>
+                        <img src={southdakotaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="tennessee">
-                        <img src={tennesseeButton}/>
+                        <img src={tennesseeButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="texas">
-                        <img src={texasButton}/>
+                        <img src={texasButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="utah">
-                        <img src={utahButton}/>
+                        <img src={utahButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="vermont">
-                        <img src={vermontButton}/>
+                        <img src={vermontButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="virginia">
-                        <img src={virginiaButton}/>
+                        <img src={virginiaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="washington">
-                        <img src={washingtonButton}/>
+                        <img src={washingtonButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="westvirginia">
-                        <img src={westvirginiaButton}/>
+                        <img src={westvirginiaButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="wisconson">
-                        <img src={wisconsonButton}/>
+                        <img src={wisconsonButton} alt="circle surrounding state abbreviation" />
                     </div>
                     <div class="wyoming">
-                        <img src={wyomingButton}/>
+                        <img src={wyomingButton} alt="circle surrounding state abbreviation" />
                     </div>
 
 
