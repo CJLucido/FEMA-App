@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 //, {useEffect}
 import {connect} from "react-redux";
 
@@ -38,9 +38,9 @@ function YearPage(props){
 //         console.log(props.currentProvince)
 // }, [props.currentProvince]);
 
-    const handleYearChange = (event) => {
-        props.changeYearRange(event.target.value)
-    }
+    // const handleYearChange = (event) => {
+    //     props.changeYearRange(event.target.value)
+    // }
 
     const handleStateRefresh = (event) => {
         props.changeProvince("");
