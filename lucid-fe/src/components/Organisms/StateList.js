@@ -35,11 +35,12 @@ console.log("this is province", props.currentProvince)
             <Divider
                 style={{
                 justify:"center",
-                alignItems:"flex-start"
+                alignItems:"flex-start",
+                padding:"0 0 0 0",
             }}
             >
-                <Row justify="space-around" align="top">
-                <Col span={24}>
+                <Row justify="space-around" align="top" padding="0 0 0 0" >
+                <Col span={24} padding="0 0 0 0" >
                 {
 
                 props.stateUSA.map(item=> 

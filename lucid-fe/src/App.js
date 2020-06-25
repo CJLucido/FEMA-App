@@ -15,7 +15,8 @@ import StatesPage from "./components/Pages/02-StatesPage";
 //import ArticlesPage from "./components/Pages/08-ArticlesPage";
 //import NewsPage from "./components/Pages/09-NewsPage";
 //import ContactPage from "./components/Pages/10-ContactPage";
-import StateList from "./components/Organisms/StateList"
+//import StateList from "./components/Organisms/StateList"
+import YearPage from "./components/Pages/03-YearPage";
 
 import {connect} from "react-redux";
 
@@ -66,7 +67,7 @@ function App() {
             <StatesPage/>
           </Route>  
           <Route path='/statesold'>
-            <StateList/>
+            <YearPage/>
           </Route>   
 
 

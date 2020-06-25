@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 //, {useEffect}
 import {connect} from "react-redux";
 
@@ -73,11 +73,22 @@ import wyomingButton from "../../imgs/wyomingButton.svg";
 //THIS FUNCTIONAL COMPONENT
 
 function StatesPage(props){
+    // const [currentProvince, setProvince] = useState("")
+
+
+//     useEffect(() => {
+//         props.changeProvince(" ")
+//         console.log(props.currentProvince)
+// }, [props.currentProvince]);
 
     const handleNameChange = (event) => {
         props.changeProvince(event.currentTarget.id)
     }
 
+    const handleStateRefresh = (event) => {
+        props.changeProvince("");
+        console.log(props.currentProvince)
+    }
     return(
         <div>
             <section id="states">
@@ -85,8 +96,8 @@ function StatesPage(props){
                     <div class="flex-box-states s2-a-title">
                         <h1>DR Finder</h1>
                     </div>   
-                    <div class="state-instructions-box">
-                        <img src={stateMessage} alt="box with unclosed corners giving direction to choose a state from the list"/>
+                    <div  class="state-instructions-box">
+                        <img onClick={handleStateRefresh} src={stateMessage} alt="box with unclosed corners giving direction to choose a state from the list"/>
                     </div>
                     
                     <div class="alabama" id="AL" onClick={handleNameChange} >
