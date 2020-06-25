@@ -3,7 +3,8 @@ import {
     SOME_FAILURE,
     FEMA_LOAD_SUCCESS,
      FEMA_LOAD_FAILURE,
-     FEMA_LOADING
+     FEMA_LOADING,
+     CHANGE_PROVINCE
 } from "../actions";
 
 const initialState = {
@@ -13,6 +14,8 @@ const initialState = {
     error: null,
     stateUSA: [], //not sure if this will be an object or array. IT IS a 1000 element array of objects with 19 properties. changed from null
     isFetching: false,
+
+    currentProvince: "",
 }
 
 export function reducer(state = initialState, action){
@@ -49,6 +52,11 @@ export function reducer(state = initialState, action){
                 ...state,
                isFetching: true,
                error: null 
+            }
+        case CHANGE_PROVINCE:
+            return{
+                ...state,
+                currentProvince: action.payload
             }
         default:
             return state

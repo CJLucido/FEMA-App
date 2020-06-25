@@ -5,13 +5,15 @@ import {connect} from "react-redux";
 //ACTION FUNCTIONS
 import{
     somefunction,
-    functionFailure
+    functionFailure,
+    searchHandle,
+    changeProvince
 } from "../../actions";
 
 //STYLE COMING FROM LESS CLASSES AND ANTD COMPONENTS
 
 //PAGES
-//import {Route, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 //imgs
 import stateMessage from "../../imgs/stateMessageBox.svg";
@@ -71,178 +73,295 @@ import wyomingButton from "../../imgs/wyomingButton.svg";
 //THIS FUNCTIONAL COMPONENT
 
 function StatesPage(props){
-    // useEffect(() => {
-    //     props.somefunction()
-    // }, []);
+    // const [currentProvince, setProvince] = useState("")
 
+
+//     useEffect(() => {
+//         props.changeProvince(" ")
+//         console.log(props.currentProvince)
+// }, [props.currentProvince]);
+
+    const handleNameChange = (event) => {
+        props.changeProvince(event.currentTarget.id)
+    }
+
+    const handleStateRefresh = (event) => {
+        props.changeProvince("");
+        console.log(props.currentProvince)
+    }
     return(
         <div>
             <section id="states">
-                
-                    <div class="flex-box s2-a-title">
+                <div class="grid-states">
+                    <div class="flex-box-states s2-a-title">
                         <h1>DR Finder</h1>
                     </div>   
-                    <div class="state-instructions-box">
-                        <img src={stateMessage} alt="box with unclosed corners giving direction to choose a state from the list"/>
+                    <div  class="state-instructions-box">
+                        <img onClick={handleStateRefresh} src={stateMessage} alt="box with unclosed corners giving direction to choose a state from the list"/>
                     </div>
-                    <div class="alabama">
-                        <img src={alabamaButton}/>
+                    
+                    <div class="alabama" id="AL" onClick={handleNameChange} >
+                    <Link to="/statesold"  >
+                        <img  src={alabamaButton} alt="circle surrounding state abbreviation" />
+                    </Link>
                     </div>
-                    <div class="alaska">
-                        <img src={alaskaButton}/>
+                    <div id="AK" onClick={handleNameChange} class="alaska">
+                       <Link to="/statesold">
+                        <img src={alaskaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="arizona">
-                        <img src={arizonaButton}/>
+                    <div id="AZ" onClick={handleNameChange} class="arizona">
+                       <Link to="/statesold">
+                        <img src={arizonaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="arkansas">
-                        <img src={arkansasButton}/>
+                    <div id="AR" onClick={handleNameChange} class="arkansas">
+                       <Link to="/statesold">
+                        <img src={arkansasButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="california">
-                        <img src={californiaButton}/>
+                    <div id="CA" onClick={handleNameChange} class="california">
+                       <Link to="/statesold">
+                        <img src={californiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="colorado">
-                        <img src={coloradoButton}/>
+                    <div id="CO" onClick={handleNameChange} class="colorado">
+                       <Link to="/statesold">
+                        <img src={coloradoButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="connecticut">
-                        <img src={connecticutButton}/>
+                    <div id="CT" onClick={handleNameChange} class="connecticut">
+                       <Link to="/statesold">
+                        <img src={connecticutButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="delaware">
-                        <img src={delawareButton}/>
+                    <div id="DE" onClick={handleNameChange} class="delaware">
+                       <Link to="/statesold">
+                        <img src={delawareButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="dc">
-                        <img src={districtofcolombiaButton}/>
+                    <div id="DC" onClick={handleNameChange} class="dc">
+                       <Link to="/statesold">
+                        <img src={districtofcolombiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="florida">
-                        <img src={floridaButton}/>
+                    <div id="FL" onClick={handleNameChange} class="florida">
+                       <Link to="/statesold">
+                        <img src={floridaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="georgia">
-                        <img src={georgiaButton}/>
+                    <div id="GA" onClick={handleNameChange} class="georgia">
+                       <Link to="/statesold">
+                        <img src={georgiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="hawaii">
-                        <img src={hawaiiButton}/>
+                    <div id="HI" onClick={handleNameChange} class="hawaii">
+                       <Link to="/statesold">
+                        <img src={hawaiiButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="idaho">
-                        <img src={idahoButton}/>
+                    <div id="ID" onClick={handleNameChange} class="idaho">
+                       <Link to="/statesold">
+                        <img src={idahoButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="illinois">
-                        <img src={illinoisButton}/>
+                    <div id="IL" onClick={handleNameChange} class="illinois">
+                       <Link to="/statesold">
+                        <img src={illinoisButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="indiana">
-                        <img src={indianaButton}/>
+                    <div id="IN" onClick={handleNameChange} class="indiana">
+                       <Link to="/statesold">
+                        <img src={indianaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="iowa">
-                        <img src={iowaButton}/>
+                    <div id="IA" onClick={handleNameChange} class="iowa">
+                       <Link to="/statesold">
+                        <img src={iowaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="kansas">
-                        <img src={kansasButton}/>
+                    <div id="KS" onClick={handleNameChange} class="kansas">
+                       <Link to="/statesold">
+                        <img src={kansasButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="kentucky">
-                        <img src={kentuckyButton}/>
+                    <div id="KY" onClick={handleNameChange} class="kentucky">
+                       <Link to="/statesold">
+                        <img src={kentuckyButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="louisiana">
-                        <img src={louisianaButton}/>
+                    <div id="LA" onClick={handleNameChange} class="louisiana">
+                       <Link to="/statesold">
+                        <img src={louisianaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="maine">
-                        <img src={maineButton}/>
+                    <div id="ME" onClick={handleNameChange} class="maine">
+                       <Link to="/statesold">
+                        <img src={maineButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="maryland">
-                        <img src={marylandButton}/>
+                    <div id="MD" onClick={handleNameChange} class="maryland">
+                       <Link to="/statesold">
+                        <img src={marylandButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="massachusetts">
-                        <img src={massachusettsButton}/>
+                    <div id="MA" onClick={handleNameChange} class="massachusetts">
+                       <Link to="/statesold">
+                        <img src={massachusettsButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="michigan">
-                        <img src={michiganButton}/>
+                    <div id="MI" onClick={handleNameChange} class="michigan">
+                       <Link to="/statesold">
+                        <img src={michiganButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="minnesota">
-                        <img src={minnesotaButton}/>
+                    <div id="MN" onClick={handleNameChange} class="minnesota">
+                       <Link to="/statesold">
+                        <img src={minnesotaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="mississippi">
-                        <img src={mississippiButton}/>
+                    <div id="MS" onClick={handleNameChange} class="mississippi">
+                       <Link to="/statesold">
+                        <img src={mississippiButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="missouri">
-                        <img src={missouriButton}/>
+                    <div id="MO" onClick={handleNameChange} class="missouri">
+                       <Link to="/statesold">
+                        <img src={missouriButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="montana">
-                        <img src={montanaButton}/>
+                    <div id="MT" onClick={handleNameChange} class="montana">
+                       <Link to="/statesold">
+                        <img src={montanaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="nebraska">
-                        <img src={nebraskaButton}/>
+                    <div id="NE" onClick={handleNameChange} class="nebraska">
+                       <Link to="/statesold">
+                        <img src={nebraskaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="nevada">
-                        <img src={nevadaButton}/>
+                    <div id="NV" onClick={handleNameChange} class="nevada">
+                       <Link to="/statesold">
+                        <img src={nevadaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="newhampshire">
-                        <img src={newhampshireButton}/>
+                    <div id="NH" onClick={handleNameChange} class="newhampshire">
+                       <Link to="/statesold">
+                        <img src={newhampshireButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="newjersey">
-                        <img src={newjerseyButton}/>
+                    <div id="NJ" onClick={handleNameChange} class="newjersey">
+                       <Link to="/statesold">
+                        <img src={newjerseyButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="newmexico">
-                        <img src={newmexicoButton}/>
+                    <div id="NM" onClick={handleNameChange} class="newmexico">
+                       <Link to="/statesold">
+                        <img src={newmexicoButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="newyork">
-                        <img src={newyorkButton}/>
+                    <div id="NY" onClick={handleNameChange} class="newyork">
+                       <Link to="/statesold">
+                        <img src={newyorkButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="northcarolina">
-                        <img src={northcarolinaButton}/>
+                    <div id="NC" onClick={handleNameChange} class="northcarolina">
+                       <Link to="/statesold">
+                        <img src={northcarolinaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="northdakota">
-                        <img src={northdakotaButton}/>
+                    <div id="ND" onClick={handleNameChange} class="northdakota">
+                       <Link to="/statesold">
+                        <img src={northdakotaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="ohio">
-                        <img src={ohioButton}/>
+                    <div id="OH" onClick={handleNameChange} class="ohio">
+                       <Link to="/statesold">
+                        <img src={ohioButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="oklahoma">
-                        <img src={oklahomaButton}/>
+                    <div id="OK" onClick={handleNameChange} class="oklahoma">
+                       <Link to="/statesold">
+                        <img src={oklahomaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="oregon">
-                        <img src={oregonButton}/>
+                    <div id="OR" onClick={handleNameChange} class="oregon">
+                       <Link to="/statesold">
+                        <img src={oregonButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="pennsylvania">
-                        <img src={pennsylvaniaButton}/>
+                    <div id="PA" onClick={handleNameChange} class="pennsylvania">
+                       <Link to="/statesold">
+                        <img src={pennsylvaniaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="puertorico">
-                        <img src={puertoricoButton}/>
+                    <div id="PR" onClick={handleNameChange} class="puertorico">
+                       <Link to="/statesold">
+                        <img src={puertoricoButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="rhodeisland">
-                        <img src={rhodeislandButton}/>
+                    <div id="RI" onClick={handleNameChange} class="rhodeisland">
+                       <Link to="/statesold">
+                        <img src={rhodeislandButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="southcarolina">
-                        <img src={southcarolinaButton}/>
+                    <div id="SC" onClick={handleNameChange} class="southcarolina">
+                       <Link to="/statesold">
+                        <img src={southcarolinaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="southdakota">
-                        <img src={southdakotaButton}/>
+                    <div id="SD" onClick={handleNameChange} class="southdakota">
+                       <Link to="/statesold">
+                        <img src={southdakotaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="tennessee">
-                        <img src={tennesseeButton}/>
+                    <div id="TN" onClick={handleNameChange} class="tennessee">
+                       <Link to="/statesold">
+                        <img src={tennesseeButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="texas">
-                        <img src={texasButton}/>
+                    <div id="TX" onClick={handleNameChange} class="texas">
+                       <Link to="/statesold">
+                        <img src={texasButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="utah">
-                        <img src={utahButton}/>
+                    <div id="UT" onClick={handleNameChange} class="utah">
+                       <Link to="/statesold">
+                        <img src={utahButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="vermont">
-                        <img src={vermontButton}/>
+                    <div id="VT" onClick={handleNameChange} class="vermont">
+                       <Link to="/statesold">
+                        <img src={vermontButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="virginia">
-                        <img src={virginiaButton}/>
+                    <div id="VA" onClick={handleNameChange} class="virginia">
+                       <Link to="/statesold">
+                        <img src={virginiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="washington">
-                        <img src={washingtonButton}/>
+                    <div id="WA" onClick={handleNameChange} class="washington">
+                       <Link to="/statesold">
+                        <img src={washingtonButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="westvirginia">
-                        <img src={westvirginiaButton}/>
+                    <div id="WV" onClick={handleNameChange} class="westvirginia">
+                       <Link to="/statesold">
+                        <img src={westvirginiaButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="wisconson">
-                        <img src={wisconsonButton}/>
+                    <div id="WI" onClick={handleNameChange} class="wisconson">
+                       <Link to="/statesold">
+                        <img src={wisconsonButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
-                    <div class="wyoming">
-                        <img src={wyomingButton}/>
+                    <div id="WY" onClick={handleNameChange} class="wyoming">
+                       <Link to="/statesold">
+                        <img src={wyomingButton} alt="circle surrounding state abbreviation" />
+                        </Link>
                     </div>
 
-
+                   </div>
             </section>
         </div>
         
@@ -253,7 +372,9 @@ function StatesPage(props){
 
 const mapDispatchToProps ={
     somefunction,
-    functionFailure
+    functionFailure,
+    searchHandle,
+    changeProvince
 }
 
 export default connect(state => state, mapDispatchToProps)(StatesPage);

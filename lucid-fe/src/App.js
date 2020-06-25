@@ -15,7 +15,8 @@ import StatesPage from "./components/Pages/02-StatesPage";
 //import ArticlesPage from "./components/Pages/08-ArticlesPage";
 //import NewsPage from "./components/Pages/09-NewsPage";
 //import ContactPage from "./components/Pages/10-ContactPage";
-import StateList from "./components/Organisms/StateList"
+//import StateList from "./components/Organisms/StateList"
+import YearPage from "./components/Pages/03-YearPage";
 
 import {connect} from "react-redux";
 
@@ -28,7 +29,7 @@ import{
 function App() {
   return (
     <div className="App">
-      <header>
+      {/* <header> */}
       {/* <header className="App-header"> */}
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -45,7 +46,7 @@ function App() {
         <p class="test">Carlo Lucido</p>
         <Button type="primary">Button</Button> */}
 
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -53,10 +54,10 @@ function App() {
             <Link to="/states">States</Link>
           </li>
           <li>
-            <Link to="/statesold">States</Link>
+            <Link to="/statesold">DR Finder</Link>
           </li>
         </ul>
-      </header>
+      </header> */}
       <Switch>
 
           <Route exact path='/'>
@@ -66,7 +67,7 @@ function App() {
             <StatesPage/>
           </Route>  
           <Route path='/statesold'>
-            <StateList/>
+            <YearPage/>
           </Route>   
 
 

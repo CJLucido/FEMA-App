@@ -391,3 +391,20 @@ grid-row: 1 / span 3 ;
 display:grid;
 grid-template-rows: 1fr 1fr 1fr
 }
+
+____________________________
+_state links_
+
+it is not best practice to use divs as buttons
+    they do not have the 'value' attribute useful for event handlers
+    this was circumnavigated by using currentTarget.id
+        likewise I had some issue with using preventDefault on event handler, will have to review notes
+
+
+____________________________________
+_ant cards_
+
+the cards from antd have a built in padding on ant-divider-innertext
+    for mobile this was offsetting the positioning to the left from center
+        my solution was to reduce the max-width of the Card div to 85vw
+

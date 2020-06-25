@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect} from 'react'
 
 import {connect} from 'react-redux'
 import {fetchStatesUSA, searchHandle} from "../../actions"
@@ -12,30 +12,35 @@ import {Row, Col, Divider} from 'antd';
 
 
 function StateList(props){
-    const [name, setName] = useState("default")
+        useEffect(() => {
+                props.searchHandle(props.currentProvince)
+    }, []);
+    // const [name, setName] = useState("")
 
-    const handleNameChange = event => {
-        setName(event.target.value)
-        props.searchHandle(name)
-    }
-
+    // const handleNameChange = event => {
+    //     setName(event.target.value)
+    //     props.searchHandle(name)
+    // }
+// <button type="button" onLoad={()=>props.searchHandle(props.currentProvince)}>Test Button to see data</button>
+console.log("this is province", props.currentProvince)
     return(
         <div>
-        <section className="search-form">
+        {/* <section className="search-form" onChange={() => props.searchHandle(props.currentProvince)}>
         <form>
            <label name="search">Search: </label>
            <input name="search" type="text" placeholder="Search by Symbol" value={name} onChange={handleNameChange}/>
         </form>
-       </section>
-            <button type="button" onClick={()=>props.fetchStatesUSA()}>Test Button to see data</button>
+       </section > */}
+            
             <Divider
                 style={{
                 justify:"center",
-                alignItems:"flex-start"
+                alignItems:"flex-start",
+                padding:"0 0 0 0",
             }}
             >
-                <Row justify="space-around" align="top">
-                <Col span={24}>
+                <Row justify="space-around" align="top" padding="0 0 0 0" >
+                <Col span={24} padding="0 0 0 0" >
                 {
 
                 props.stateUSA.map(item=> 

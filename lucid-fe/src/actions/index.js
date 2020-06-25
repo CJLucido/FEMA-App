@@ -1,6 +1,8 @@
 import axios from "axios";
 // import axiosWithAuth from "../axios/axiosWithAuth";
 
+
+
 //export as
 export const SOME_ACTION = "SOME_ACTION";
 export const SOME_FAILURE ="SOME-FAILURE";
@@ -38,6 +40,8 @@ export const FEMA_LOAD_FAILURE =  "FEMA_LOAD_FAILURE"
 export const FEMA_LOADING =  "FEMA_LOADING"
 
 export const SET_QUERY = "SET_QUERY"
+
+export const CHANGE_PROVINCE = "CHANGE_PROVINCE"
   
 
 export const femaLoadSuccess = data => ({
@@ -55,10 +59,17 @@ export const femaLoading = () => ({
 })
 
 
+
+export const changeProvince = currentProvince => ({
+    type: CHANGE_PROVINCE,
+    payload: currentProvince
+})
+ 
+
 export const fetchStatesUSA= () => dispatch =>{
     dispatch(femaLoading());
     axios
-    .get("https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries") //?$filter=startswith(state,'FL')
+    .get("https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'FL')")
     .then(res =>
         dispatch(femaLoadSuccess(res.data.DisasterDeclarationsSummaries))
     )
@@ -70,6 +81,7 @@ export const fetchStatesUSA= () => dispatch =>{
 export const searchHandle = (name) => dispatch => {
     
     dispatch(femaLoading());
+    console.log("this is search name", name)
     axios
     .get(`https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'${name}')`)
     .then(res =>
