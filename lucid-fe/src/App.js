@@ -29,7 +29,7 @@ import{
 function App() {
   return (
     <div className="App">
-      <header>
+      {/* <header> */}
       {/* <header className="App-header"> */}
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -46,7 +46,7 @@ function App() {
         <p class="test">Carlo Lucido</p>
         <Button type="primary">Button</Button> */}
 
-        <ul>
+        {/* <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -57,7 +57,7 @@ function App() {
             <Link to="/statesold">DR Finder</Link>
           </li>
         </ul>
-      </header>
+      </header> */}
       <Switch>
 
           <Route exact path='/'>

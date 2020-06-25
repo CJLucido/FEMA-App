@@ -125,6 +125,16 @@ section#home .grid-home {
   grid-column: 2 / span 1;
   grid-row: 4 / span 1;
 }
+@media (max-width: 600px) {
+  .cardText {
+    font-size: 2.5vw;
+  }
+}
+@media (min-width: 601px) {
+  .cardText {
+    font-size: 1.5vw;
+  }
+}
 section#states .grid-states {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -378,6 +388,12 @@ section#years .grid-years {
   min-width: 100vw;
   align-items: flex-start;
 }
+.fixed {
+  position: fixed;
+  z-index: 2;
+  background-color: white;
+  padding-bottom: 2vw;
+}
 .year-instructions-box {
   grid-column: 3 / span 4;
   grid-row: 3 / span 2;
@@ -437,7 +453,7 @@ section#years .grid-years {
 .s3-c-years-text {
   grid-column: 1 / span 6;
   grid-row: 10 / span auto;
-  margin: 0vw;
+  margin-top: 80%;
   padding: 0em;
 }
 @media (max-width: 600px) {

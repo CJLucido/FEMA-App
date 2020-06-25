@@ -18,7 +18,7 @@ import {DatePicker} from 'antd';
 import StateList from "../Organisms/StateList";
 
 //PAGES
-//import {Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 //imgs
 
@@ -51,6 +51,7 @@ function YearPage(props){
         <div>
             <section id="years">
                 <div class="grid-years">
+                    <div class="fixed">
                     <div class="flex-box-year s3-a-title">
                      <h1>{props.currentProvince} DR Finder</h1>
                     </div>   
@@ -59,7 +60,9 @@ function YearPage(props){
                     </div>
 
                     <div class="flex-box-year s3-b-backlink">
+                    <Link to="/states">
                      <img onClick={handleStateRefresh} src={stateReturnButton} alt="box with unclosed corners giving direction to choose a state from the list"/>
+                     </Link>
                     </div>   
 
                     <div class="flex-box-year s3-d-instruction">
@@ -68,6 +71,7 @@ function YearPage(props){
 
                     <div class="year-selector">
                         <RangePicker picker="year"/>
+                    </div>
                     </div>
 
                         <div class="s3-c-years-text">

@@ -19,13 +19,14 @@ use backtop if necessary on Mobile
 //apis
  want to allow search for state by year to inform user if they should continue to search for pa records
  does this api even allow filter by year RANGE?
- 
+
 
  hook up to PublicAssistanceFundedProjectDetails through actions and reducers
 
 //functions
-fix search box
-add form for other api
+copy search function for year, pa support and category choice
 
  //css
- figure out word wrap in card content boxes
+ fix styling of page 3 upper left corner
+
+
