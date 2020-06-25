@@ -27,7 +27,9 @@ export default function StateCard(props) {
         <Card.Grid style={gridStyle2}>{props.iaProgramDeclared ? "IA Support" : "No IA Support"}</Card.Grid>
         <Card.Grid style={gridStyle2}>{props.hmProgramDeclared ? "HM Support" : "No HM Support"}</Card.Grid>
 
-   
+  
+  <Card.Grid style={gridStyle2}>{props.stateName}</Card.Grid>
+        
     </Card>
     </Card>
   );
