@@ -52,6 +52,7 @@ function YearPage(props){
             <section id="years">
                 <div class="grid-years">
                     <div class="fixed">
+                    <div class="grid-years">
                     <div class="flex-box-year s3-a-title">
                      <h1>{props.currentProvince} DR Finder</h1>
                     </div>   
@@ -71,6 +72,7 @@ function YearPage(props){
 
                     <div class="year-selector">
                         <RangePicker picker="year"/>
+                    </div>
                     </div>
                     </div>
 

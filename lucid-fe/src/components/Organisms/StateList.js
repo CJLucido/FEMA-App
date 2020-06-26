@@ -14,7 +14,7 @@ import {Row, Col, Divider} from 'antd';
 function StateList(props){
         useEffect(() => {
                 props.searchHandle(props.currentProvince)
-    }, [props.searchHandle]);
+    }, [props.searchHandle, props.currentProvince]);
     // const [name, setName] = useState("")
 
     // const handleNameChange = event => {
