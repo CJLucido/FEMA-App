@@ -127,7 +127,7 @@ section#home .grid-home {
 }
 @media (max-width: 600px) {
   .cardText {
-    font-size: 2.5vw;
+    font-size: 1.5vw;
   }
 }
 @media (min-width: 601px) {
