@@ -12,11 +12,13 @@ import {Row, Col, Divider} from 'antd';
 
 
 function StateList(props){
-    const searchHandle = props.searchHandle
+    const searchHandle = props.searchHandle;
 
         useEffect(() => {
                 searchHandle(props.currentProvince)
-    }, [props.currentProvince]);
+    }, [props.currentProvince]); // eslint-disable-line react-hooks/exhaustive-deps
+    
+    
     // const [name, setName] = useState("")
 
     // const handleNameChange = event => {
