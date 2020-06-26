@@ -1,6 +1,8 @@
 import React from 'react';
 import {Card} from 'antd';
 
+import {Link} from "react-router-dom";
+
 export default function StateCard(props) {
  
     const gridStyle1 = {
@@ -26,7 +28,10 @@ export default function StateCard(props) {
         <Card.Grid style={gridStyle1}>
         Closed: {props.closeDate ? props.closeDate.slice(0,10) : props.closeDate}
         </Card.Grid>
-        <Card.Grid style={gridStyle2}>{props.paProgramDeclared ? "PA Support" : "No PA Support"}</Card.Grid>
+        <Card.Grid style={gridStyle2}>
+          {props.paProgramDeclared ? <Link to="/categorial">"PA Support"</Link> : "No PA Support"}
+          
+          </Card.Grid>
         <Card.Grid style={gridStyle2}>{props.iaProgramDeclared ? "IA Support" : "No IA Support"}</Card.Grid>
         <Card.Grid style={gridStyle2}>{props.hmProgramDeclared ? "HM Support" : "No HM Support"}</Card.Grid>
 
