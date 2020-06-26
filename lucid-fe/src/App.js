@@ -3,7 +3,7 @@ import React from 'react';
 
 import './App.less';
 
-import {Route, Switch, Link} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 
 import HomePage from "./components/Pages/01-HomePage";
 import StatesPage from "./components/Pages/02-StatesPage";

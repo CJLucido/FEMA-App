@@ -19,6 +19,11 @@ export default function StateCard(props) {
 
     //fontsize for smaller cardtext on home.less file
 
+    const handleDRNumber = (event) => {
+      // props.changeProvince(event.currentTarget.id)
+      console.log("wowzers")
+  }
+
   return (
     <Card style={{padding:"0 0 0 0", margin:"1em",backgroundColor:"#000025", borderRadius:"00px", boxShadow:"0px 4px 4px rgba(0,0,0,0.25)", maxWidth: "85vw"}}>
     <Card class="cardText" style={{padding:"0 0 0 0", backgroundColor:"gray", borderRadius:"00px"}} title={props.disasterType + " " + props.disasterNumber + " " + props.titleDR}>
@@ -29,7 +34,7 @@ export default function StateCard(props) {
         Closed: {props.closeDate ? props.closeDate.slice(0,10) : props.closeDate}
         </Card.Grid>
         <Card.Grid style={gridStyle2}>
-          {props.paProgramDeclared ? <Link to="/categorial">"PA Support"</Link> : "No PA Support"}
+          {props.paProgramDeclared ? <Link to="/categorial" onClick={handleDRNumber}>"PA Support"</Link> : "No PA Support"}
           
           </Card.Grid>
         <Card.Grid style={gridStyle2}>{props.iaProgramDeclared ? "IA Support" : "No IA Support"}</Card.Grid>
