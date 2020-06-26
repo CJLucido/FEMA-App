@@ -432,3 +432,17 @@ SCRATCH THAT
     trying to disable with // eslint-disable-line react-hooks/exhaustive-deps
 
     
+    __________________________________________
+    _antd built in styles_
+
+    @cardText: ~'ant-card-grid';
+
+@media (max-width: 600px){
+  .@{cardText}{
+    font-size: 3vw ;
+    padding: 0px;
+    align-items: flex-start;
+  }}
+
+  for more info see github.com/ant-design/ant-design/issues/13096
+  
