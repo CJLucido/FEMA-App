@@ -25,7 +25,7 @@ import {Link} from "react-router-dom";
 
 //imgs
 
-import yearMessage from "../../imgs/yearMessageBox.svg";
+//import yearMessage from "../../imgs/yearMessageBox.svg";
 import stateReturnButton from "../../imgs/stateReturnButton.svg";
 
 // const { RangePicker } = DatePicker;

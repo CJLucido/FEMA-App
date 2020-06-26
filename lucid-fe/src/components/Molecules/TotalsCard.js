@@ -14,17 +14,7 @@ function TotalsCard(props) {
     //     findTotalFederal(props.totalFederal, props.totalObligated)
     // }, [props.totalObligated, props.totalFederal])
 
-    const gridStyle1 = {
-        width: '50%',
-        textAlign: 'flex-start',
-        wordWrap:"break-word"
-    }
 
-    const gridStyle2 = {
-        width: '33.33333333%',
-        textAlign: 'flex-start',
-        wordWrap:"break-word"
-    }
 
     //fontsize for smaller cardtext on home.less file
 
