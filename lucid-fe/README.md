@@ -418,3 +418,13 @@ fixing React Hook useEffect has a missing dependency, either include it or remov
     }, [props.searchHandle]);
 the hook depends on the function so it needs to be passed in, this is an eslint-plugin-react-hooks warning.
 another solution is to just define the function in useEffect, but since I'm using actions and redux-thunk it is better for organization to just import it.
+
+SCRATCH THAT
+
+    const searchHandle = props.searchHandle;
+
+        useEffect(() => {
+                searchHandle(props.currentProvince)
+    }, [props.currentProvince]);
+
+    it won't use he function if we don't specify to take it from props but useEffect won't allow it in that form without throwing the warning. 
