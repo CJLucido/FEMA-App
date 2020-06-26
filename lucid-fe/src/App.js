@@ -18,6 +18,7 @@ import StatesPage from "./components/Pages/02-StatesPage";
 //import StateList from "./components/Organisms/StateList"
 import YearPage from "./components/Pages/03-YearPage";
 import CategoryPage from "./components/Pages/04-CategoryPage";
+import PWPage from "./components/Pages/05-PWPage";
 
 import {connect} from "react-redux";
 
@@ -61,6 +62,9 @@ function App() {
           </Route>   
           <Route path='/categorial'>
             <CategoryPage/>
+          </Route> 
+          <Route path='/projectworksheets'>
+            <PWPage/>
           </Route> 
 
       </Switch>

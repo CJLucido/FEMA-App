@@ -173,6 +173,24 @@ grid-row: 2 / span 4;
   .cardText{
     font-size:1.5vw
   }}
+
+  @cardText2: ~'ant-card-grid';
+
+@media (max-width: 600px){
+  .@{cardText2}{
+    font-size: 1.8vw ;
+    padding: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%
+  }}
+
+  @media (min-width: 601px){
+    .@{cardText2}{
+      font-size: 1vw ;
+      align-items: flex-start;
+      height: 100%
+    }}
 // @media screen and (min-width: 500px) {
 //     .grid-home{
 //       grid-template-columns: 1fr; 

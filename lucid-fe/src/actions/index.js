@@ -48,6 +48,10 @@ export const CHANGE_START = "CHANGE_START";
 export const CHANGE_END = "CHANGE_END";
 
 export const CHANGE_DR = "CHANGE_DR";
+
+export const PW_LOAD_SUCCESS = "PW_LOAD_SUCCESS";
+
+export const CHANGE_CAT = "CHANGE_CAT";
   
 
 export const femaLoadSuccess = data => ({
@@ -64,6 +68,7 @@ export const femaLoading = () => ({
     type: FEMA_LOADING
 });
 
+///////////////////////////////////////////////////
 
 
 export const changeProvince = currentProvince => ({
@@ -86,6 +91,23 @@ export const changeDR = drNumber => ({
     payload: drNumber
 });
 
+export const changeCat = category => ({
+    type: CHANGE_CAT,
+    payload: category
+});
+
+/////////////////////////////////////////////////////
+
+//PWs
+
+export const pwLoadSuccess = data => ({
+    type:PW_LOAD_SUCCESS,
+    payload: data
+})
+
+
+///////////////////////////////////////////////////
+
 export const fetchStatesUSA= () => dispatch =>{
     dispatch(femaLoading());
     axios
@@ -98,20 +120,6 @@ export const fetchStatesUSA= () => dispatch =>{
     )
 };
 
-// export const searchHandle = (name) => dispatch => {
-    
-//     dispatch(femaLoading());
-//     console.log("this is search name", name)
-//     axios
-//     .get(`https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'${name}')`)
-//     .then(res =>
-//     {    console.log('this is the search response', res)
-//         dispatch(femaLoadSuccess(res.data.DisasterDeclarationsSummaries))}
-//     )
-//     .catch(err => {
-//     dispatch(femaLoadFailure(err))}
-//     )
-//   };
 
   export const searchHandle = (name, startDate) => dispatch => {
     
@@ -122,6 +130,22 @@ export const fetchStatesUSA= () => dispatch =>{
     .then(res =>
     {    console.log('this is the search response', res)
         dispatch(femaLoadSuccess(res.data.DisasterDeclarationsSummaries))}
+    )
+    .catch(err => {
+    dispatch(femaLoadFailure(err))}
+    )
+  };
+
+
+  export const pwHandle = (name, drNumber, category) => dispatch => {
+    
+    dispatch(femaLoading());
+    console.log("this is search name", name)
+    axios
+    .get(`https://www.fema.gov/api/open/v1/PublicAssistanceFundedProjectsDetails?$filter=startswith(stateCode,'${name}') and disasterNumber eq ${parseInt(drNumber)} and dcc eq '${category}' `) 
+    .then(res =>
+    {    console.log('this is the search response', res)
+        dispatch(pwLoadSuccess(res.data.PublicAssistanceFundedProjectsDetails))}
     )
     .catch(err => {
     dispatch(femaLoadFailure(err))}

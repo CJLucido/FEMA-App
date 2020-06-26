@@ -137,6 +137,22 @@ section#home .grid-home {
     font-size: 1.5vw;
   }
 }
+@media (max-width: 600px) {
+  .ant-card-grid {
+    font-size: 1.8vw;
+    padding: 0px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+  }
+}
+@media (min-width: 601px) {
+  .ant-card-grid {
+    font-size: 1vw ;
+    align-items: flex-start;
+    height: 100%;
+  }
+}
 section#states .grid-states {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;

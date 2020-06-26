@@ -7,7 +7,8 @@ import{
     somefunction,
     functionFailure,
     searchHandle,
-
+    changeProvince,
+    changeCat
 } from "../../actions";
 
 //STYLE COMING FROM LESS CLASSES AND ANTD COMPONENTS
@@ -44,8 +45,15 @@ function CategoryPage(props){
 // }, [props.currentProvince]);
 
 const handleCatChange = (event) => {
-    // props.changeProvince(event.currentTarget.id)
+    props.changeCat(event.currentTarget.id)
     console.log("wowzers")
+}
+
+
+const handleStateRefresh = (event) => {
+    props.changeProvince("");
+    console.log(props.currentProvince)
+    
 }
     return(
         <div>
@@ -60,7 +68,7 @@ const handleCatChange = (event) => {
 
                     <div class="flex-box-categories s4-b-backlink">
                     <Link to="/states">
-                     <img src={stateReturnButton} alt="box with unclosed corners giving direction to choose a state from a previous page"/>
+                     <img onClick={handleStateRefresh} src={stateReturnButton} alt="box with unclosed corners giving direction to choose a state from a previous page"/>
                      </Link>
                     </div>   
 
@@ -71,38 +79,38 @@ const handleCatChange = (event) => {
                      </div>   
 
                      <div class="cat-a" id="A" onClick={handleCatChange} >
-                    <Link to="/statesold"  >
+                    <Link to="/projectworksheets"  >
                         <img  src={aButton} alt="circle surrounding category abbreviation" />
                     </Link>
                     </div>
 
                     <div class="cat-b" id="B" onClick={handleCatChange} >
-                    <Link to="/statesold"  >
+                    <Link to="/projectworksheets"  >
                         <img  src={bButton} alt="circle surrounding category abbreviation" />
                     </Link>
                     </div>
                     <div class="cat-c" id="C" onClick={handleCatChange} >
-                    <Link to="/statesold"  >
+                    <Link to="/projectworksheets"  >
                         <img  src={cButton} alt="circle surrounding category abbreviation" />
                     </Link>
                     </div>
                     <div class="cat-d" id="D" onClick={handleCatChange} >
-                    <Link to="/statesold"  >
+                    <Link to="/projectworksheets"  >
                         <img  src={dButton} alt="circle surrounding category abbreviation" />
                     </Link>
                     </div>
                     <div class="cat-e" id="E" onClick={handleCatChange} >
-                    <Link to="/statesold"  >
+                    <Link to="/projectworksheets"  >
                         <img  src={eButton} alt="circle surrounding category abbreviation" />
                     </Link>
                     </div>
                     <div class="cat-f" id="F" onClick={handleCatChange} >
-                    <Link to="/statesold"  >
+                    <Link to="/projectworksheets"  >
                         <img  src={fButton} alt="circle surrounding category abbreviation" />
                     </Link>
                     </div>
                     <div class="cat-g" id="G" onClick={handleCatChange} >
-                    <Link to="/statesold"  >
+                    <Link to="/projectworksheets"  >
                         <img  src={gButton} alt="circle surrounding category abbreviation" />
                     </Link>
                     </div>
@@ -132,7 +140,8 @@ const mapDispatchToProps ={
     somefunction,
     functionFailure,
     searchHandle,
-
+    changeProvince,
+    changeCat
 }
 
 export default connect(state => state, mapDispatchToProps)(CategoryPage);

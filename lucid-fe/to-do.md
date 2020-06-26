@@ -18,15 +18,22 @@ use backtop if necessary on Mobile
 
 //apis
  want to allow search for state by year to inform user if they should continue to search for pa records
- does this api even allow filter by year RANGE?
+ does this api even allow filter by year RANGE? NO
 
-
- hook up to PublicAssistanceFundedProjectDetails through actions and reducers
 
 //functions
-copy search function for year, pa support and category choice
+create a function that sums a total of the current disaster funding obligated 
+
+conditionally render a list of PWs there is info for for each state and show that if there is no info for that PW
 
  //css
- fix styling of page 3 upper left corner
+ make less file for PWPage!!!!!
+ fix styling of pwCard contents
+ fix styling of last page upper right corner
+ remove text block from last page and replace with yearReturnButton
+
+ //stretch
+ make treemap of obligations
+
 
 
