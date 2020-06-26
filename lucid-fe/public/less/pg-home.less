@@ -157,10 +157,17 @@ grid-row: 2 / span 4;
 
 }
 
+
+
+@cardText: ~'ant-card-grid';
+
 @media (max-width: 600px){
-.cardText{
-  font-size:1.5vw
-}}
+  .@{cardText}{
+    font-size: 3vw ;
+    padding: 0px;
+    align-items: flex-start;
+  }}
+
 
 @media (min-width: 601px){
   .cardText{

@@ -126,8 +126,10 @@ section#home .grid-home {
   grid-row: 4 / span 1;
 }
 @media (max-width: 600px) {
-  .cardText {
-    font-size: 1.5vw;
+  .ant-card-grid {
+    font-size: 3vw ;
+    padding: 0px;
+    align-items: flex-start;
   }
 }
 @media (min-width: 601px) {
@@ -462,6 +464,7 @@ section#years .grid-years {
     grid-column: 1 / span 3;
     grid-row: 3 / span 2;
     margin-right: 2vw;
+    font-size: smaller;
   }
 }
 @media (min-width: 601px) {
