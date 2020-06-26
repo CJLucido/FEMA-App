@@ -7,7 +7,9 @@ import{
     somefunction,
     functionFailure,
     searchHandle,
-    changeProvince
+    changeProvince,
+    changeStart,
+    changeEnd
 } from "../../actions";
 
 //STYLE COMING FROM LESS CLASSES AND ANTD COMPONENTS
@@ -25,7 +27,7 @@ import {Link} from "react-router-dom";
 import yearMessage from "../../imgs/yearMessageBox.svg";
 import stateReturnButton from "../../imgs/stateReturnButton.svg";
 
-const { RangePicker } = DatePicker;
+// const { RangePicker } = DatePicker;
 
 //THIS FUNCTIONAL COMPONENT
 
@@ -38,20 +40,33 @@ function YearPage(props){
 //         console.log(props.currentProvince)
 // }, [props.currentProvince]);
 
-    // const handleYearChange = (event) => {
-    //     props.changeYearRange(event.target.value)
-    // }
+
+
+async function changeYearRange(dateString){
+        console.log("start", dateString)
+        //console.log('end', dateString[1])
+        props.changeStart(dateString)
+        //props.changeEnd(dateString[1])
+}
+
+    const handleYearChange = (value, dateString) => {
+        changeYearRange(dateString)
+        
+    }
 
     const handleStateRefresh = (event) => {
         props.changeProvince("");
         console.log(props.currentProvince)
         
     }
+
+
     return(
         <div>
             <section id="years">
                 <div class="grid-years">
                     <div class="fixed">
+                    <div class="grid-years">
                     <div class="flex-box-year s3-a-title">
                      <h1>{props.currentProvince} DR Finder</h1>
                     </div>   
@@ -70,7 +85,8 @@ function YearPage(props){
                     </div>   
 
                     <div class="year-selector">
-                        <RangePicker picker="year"/>
+                        <DatePicker picker="year" onChange={handleYearChange}/>
+                    </div>
                     </div>
                     </div>
 
@@ -90,7 +106,9 @@ const mapDispatchToProps ={
     somefunction,
     functionFailure,
     searchHandle,
-    changeProvince
+    changeProvince,
+    changeStart,
+    changeEnd
 }
 
 export default connect(state => state, mapDispatchToProps)(YearPage);

@@ -4,7 +4,12 @@ import {
     FEMA_LOAD_SUCCESS,
      FEMA_LOAD_FAILURE,
      FEMA_LOADING,
-     CHANGE_PROVINCE
+     CHANGE_PROVINCE,
+     CHANGE_START,
+     CHANGE_END,
+     CHANGE_DR,
+     PW_LOAD_SUCCESS,
+     CHANGE_CAT
 } from "../actions";
 
 const initialState = {
@@ -13,9 +18,17 @@ const initialState = {
     failure: false,
     error: null,
     stateUSA: [], //not sure if this will be an object or array. IT IS a 1000 element array of objects with 19 properties. changed from null
+    projectWorksheets: [],
     isFetching: false,
 
     currentProvince: "",
+    startDate: "1953-01-01T00:00:00.000Z",
+    endDate: "2020-12-31T24:60:60.000Z",
+    drNumber: " ",
+    category:"A",
+
+    totalObligated: 0,
+    totalFederal: 0,
 }
 
 export function reducer(state = initialState, action){
@@ -57,6 +70,31 @@ export function reducer(state = initialState, action){
             return{
                 ...state,
                 currentProvince: action.payload
+            }
+        case CHANGE_START:
+            return{
+                ...state,
+                startDate: action.payload + "-01-01T00:00:00.000Z"
+            }
+        case CHANGE_END:
+            return{
+                ...state,
+                endDate: action.payload + "-12-31T24:60:60.000Z"
+            }
+        case CHANGE_DR:
+            return{
+                ...state,
+                drNumber: action.payload
+            }
+        case PW_LOAD_SUCCESS:
+            return{
+                ...state,
+                projectWorksheets: action.payload
+            }
+        case CHANGE_CAT:
+            return{
+                ...state,
+                category: action.payload
             }
         default:
             return state

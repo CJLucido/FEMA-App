@@ -1,4 +1,4 @@
-section#years .grid-years{
+section#categories .grid-categories{
     display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
        // grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -8,16 +8,8 @@ section#years .grid-years{
      align-items: flex-start;
     }
 
-    .fixed{
-        position: fixed;
-        z-index: 2;
-        background-color: white;
-        padding-bottom: 2vw;
-        box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
-    }
-
   
-    .year-instructions-box {
+    .categories-instructions-box {
 
         grid-column: 3 / span 4;
         grid-row: 3 / span 2;
@@ -29,14 +21,14 @@ section#years .grid-years{
 
 
 
-    .year-selector{
+    .categories-selector{
         grid-column: 2 /span 4;
         grid-row: 5 / span 2;
         align-content: flex-end;
         margin-top: 2vw;
     }
 
-    .flex-box-year {
+    .flex-box-categories {
         display: flex;
         justify-content: center;
         align-items: center; 
@@ -80,11 +72,14 @@ section#years .grid-years{
     //   background-color: rgb(187, 106, 169);
     //   }
 
-    .s3-a-title{ 
-        grid-column: 3 / span 4;
-        grid-row: 1 / span 2;
-    }
-    .s3-b-backlink{ 
+
+    //USING THE SAME CLASS FOUND IN YEARPAGE FOR THIS BECAUSE S4_A_TITLE OVERRIDES WRONGLY (way left) AND S3-A-TITLE MOVES IT A BIT TO THE LEFT
+    // .s3-a-title{ 
+    //     grid-column: 3 / span 3;
+    //     grid-row: 1 / span 2;
+    // }
+
+    .s4-b-backlink{ 
         grid-column: 1 / span 3;
         grid-row: 1 / span 1;
         align-self: flex-start;
@@ -92,7 +87,7 @@ section#years .grid-years{
         margin-top: 2vw;
         margin-left: 2vw;
     }
-    .s3-c-years-text{ 
+    .s4-c-categories-text{ 
         grid-column: 1 / span 6;
         grid-row: 10 / span auto;
         margin-top: 50%;
@@ -100,19 +95,69 @@ section#years .grid-years{
     }
     
     @media (max-width: 600px){
-    .s3-d-instruction{
+    .s4-d-backlink2{
         grid-column: 1 / span 3;
         grid-row: 3 / span 2;
-       margin-right: 2vw;
-       font-size: smaller;
+        align-self: flex-start;
+        justify-content: flex-start;
+        margin-top: 2vw;
+        margin-left: 2vw;
     }}
 
     @media (min-width: 601px){
-        .s3-d-instruction{
+        .s4-d-backlink2{
             grid-column: 1 / span 3;
             grid-row: 3 / span 2;
+            align-self: flex-start;
+            justify-content: flex-start;
+            margin-top: 2vw;
+            margin-left: 2vw;
             //align-self: flex-end;
         }}
+
+
+        .cat-a{
+            grid-column: 1 / span 1;
+            grid-row: 5 / span 1;
+            justify-self: flex-end;
+        }
+
+        .cat-b{
+            grid-column: 2 / span 1;
+            grid-row: 6 / span 1;
+            justify-self: flex-end;
+        }
+        .cat-c{
+            grid-column: 1 / span 1;
+            grid-row: 7 / span 1;
+            justify-self: flex-end;
+        }
+        .cat-d{
+            grid-column: 2 / span 1;
+            grid-row: 8 / span 1;
+            justify-self: flex-end;
+        }
+        .cat-e{
+            grid-column: 1 / span 1;
+            grid-row: 9 / span 1;
+            justify-self: flex-end;
+        }
+        .cat-f{
+            grid-column: 2 / span 1;
+            grid-row: 10 / span 1;
+            justify-self: flex-end;
+        }
+        .cat-g{
+            grid-column: 1 / span 1;
+            grid-row: 11 / span 1;
+            justify-self: flex-end;
+        }
+
+        .cat-descriptions{
+            grid-column: 4 / span 3;
+            grid-row: 5 / span 6;
+            margin-top: 5vw;
+        }
 
     // @media screen and (min-width: 500px) {
     //     .grid-states{

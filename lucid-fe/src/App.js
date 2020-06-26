@@ -3,7 +3,7 @@ import React from 'react';
 
 import './App.less';
 
-import {Route, Switch, Link} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 
 import HomePage from "./components/Pages/01-HomePage";
 import StatesPage from "./components/Pages/02-StatesPage";
@@ -17,6 +17,8 @@ import StatesPage from "./components/Pages/02-StatesPage";
 //import ContactPage from "./components/Pages/10-ContactPage";
 //import StateList from "./components/Organisms/StateList"
 import YearPage from "./components/Pages/03-YearPage";
+import CategoryPage from "./components/Pages/04-CategoryPage";
+import PWPage from "./components/Pages/05-PWPage";
 
 import {connect} from "react-redux";
 
@@ -30,21 +32,6 @@ function App() {
   return (
     <div className="App">
       {/* <header> */}
-      {/* <header className="App-header"> */}
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p class="test">Carlo Lucido</p>
-        <Button type="primary">Button</Button> */}
 
         {/* <ul>
           <li>
@@ -56,8 +43,12 @@ function App() {
           <li>
             <Link to="/statesold">DR Finder</Link>
           </li>
+          <li>
+            <Link to="/categorial">PA Finder</Link>
+          </li>
         </ul>
       </header> */}
+
       <Switch>
 
           <Route exact path='/'>
@@ -69,7 +60,12 @@ function App() {
           <Route path='/statesold'>
             <YearPage/>
           </Route>   
-
+          <Route path='/categorial'>
+            <CategoryPage/>
+          </Route> 
+          <Route path='/projectworksheets'>
+            <PWPage/>
+          </Route> 
 
       </Switch>
     </div>

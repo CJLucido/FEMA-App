@@ -12,16 +12,14 @@ import {Row, Col, Divider} from 'antd';
 
 
 function StateList(props){
-        useEffect(() => {
-                props.searchHandle(props.currentProvince)
-    }, []);
-    // const [name, setName] = useState("")
+    const searchHandle = props.searchHandle;
 
-    // const handleNameChange = event => {
-    //     setName(event.target.value)
-    //     props.searchHandle(name)
-    // }
-// <button type="button" onLoad={()=>props.searchHandle(props.currentProvince)}>Test Button to see data</button>
+        useEffect(() => {
+                searchHandle(props.currentProvince, props.startDate)
+    }, [props.currentProvince, props.startDate]); // eslint-disable-line react-hooks/exhaustive-deps
+    
+    //, props.endDate removed due to insufficient api
+    
 console.log("this is province", props.currentProvince)
     return(
         <div>

@@ -33,38 +33,80 @@ export const functionFailure = (error) => ({type: SOME_FAILURE, payload: error})
 
 // //for more see supportify
 
-export const FEMA_LOAD_SUCCESS = "FEMA_LOAD_SUCCESS"
+export const FEMA_LOAD_SUCCESS = "FEMA_LOAD_SUCCESS";
         
-export const FEMA_LOAD_FAILURE =  "FEMA_LOAD_FAILURE"
+export const FEMA_LOAD_FAILURE =  "FEMA_LOAD_FAILURE";
 
-export const FEMA_LOADING =  "FEMA_LOADING"
+export const FEMA_LOADING =  "FEMA_LOADING";
 
-export const SET_QUERY = "SET_QUERY"
+export const SET_QUERY = "SET_QUERY";
 
-export const CHANGE_PROVINCE = "CHANGE_PROVINCE"
+export const CHANGE_PROVINCE = "CHANGE_PROVINCE";
+
+export const CHANGE_START = "CHANGE_START";
+
+export const CHANGE_END = "CHANGE_END";
+
+export const CHANGE_DR = "CHANGE_DR";
+
+export const PW_LOAD_SUCCESS = "PW_LOAD_SUCCESS";
+
+export const CHANGE_CAT = "CHANGE_CAT";
   
 
 export const femaLoadSuccess = data => ({
     type: FEMA_LOAD_SUCCESS,
     payload: data
-})
+});
 
 export const femaLoadFailure = data => ({
     type: FEMA_LOAD_FAILURE,
     payload: data
-})
+});
 
 export const femaLoading = () => ({
     type: FEMA_LOADING
-})
+});
 
+///////////////////////////////////////////////////
 
 
 export const changeProvince = currentProvince => ({
     type: CHANGE_PROVINCE,
     payload: currentProvince
-})
+});
  
+export const changeStart = startDate => ({
+    type: CHANGE_START,
+    payload: startDate
+});
+
+export const changeEnd = endDate => ({
+    type: CHANGE_END,
+    payload: endDate
+});
+
+export const changeDR = drNumber => ({
+    type: CHANGE_DR,
+    payload: drNumber
+});
+
+export const changeCat = category => ({
+    type: CHANGE_CAT,
+    payload: category
+});
+
+/////////////////////////////////////////////////////
+
+//PWs
+
+export const pwLoadSuccess = data => ({
+    type:PW_LOAD_SUCCESS,
+    payload: data
+})
+
+
+///////////////////////////////////////////////////
 
 export const fetchStatesUSA= () => dispatch =>{
     dispatch(femaLoading());
@@ -76,14 +118,15 @@ export const fetchStatesUSA= () => dispatch =>{
     .catch(err => {
     dispatch(femaLoadFailure(err))}
     )
-}
+};
 
-export const searchHandle = (name) => dispatch => {
+
+  export const searchHandle = (name, startDate) => dispatch => {
     
     dispatch(femaLoading());
     console.log("this is search name", name)
     axios
-    .get(`https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'${name}')`)
+    .get(`https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'${name}') and declarationDate ge '${startDate}' `) //and declarationDate le '${endDate}' removed because api doesn't allow for it
     .then(res =>
     {    console.log('this is the search response', res)
         dispatch(femaLoadSuccess(res.data.DisasterDeclarationsSummaries))}
@@ -91,7 +134,23 @@ export const searchHandle = (name) => dispatch => {
     .catch(err => {
     dispatch(femaLoadFailure(err))}
     )
-  }
+  };
+
+
+  export const pwHandle = (name, drNumber, category) => dispatch => {
+    
+    dispatch(femaLoading());
+    console.log("this is search name", name)
+    axios
+    .get(`https://www.fema.gov/api/open/v1/PublicAssistanceFundedProjectsDetails?$filter=startswith(stateCode,'${name}') and disasterNumber eq ${parseInt(drNumber)} and dcc eq '${category}' `) 
+    .then(res =>
+    {    console.log('this is the search response', res)
+        dispatch(pwLoadSuccess(res.data.PublicAssistanceFundedProjectsDetails))}
+    )
+    .catch(err => {
+    dispatch(femaLoadFailure(err))}
+    )
+  };
 
 // https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$orderby=state
 

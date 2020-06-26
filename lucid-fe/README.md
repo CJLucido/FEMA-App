@@ -408,3 +408,41 @@ the cards from antd have a built in padding on ant-divider-innertext
     for mobile this was offsetting the positioning to the left from center
         my solution was to reduce the max-width of the Card div to 85vw
 
+______________________________________
+_react hooks_
+
+fixing React Hook useEffect has a missing dependency, either include it or remove the dependency array. By passing props.searchHandle as dependency to useEffect (second argument)
+
+        useEffect(() => {
+                props.searchHandle(props.currentProvince)
+    }, [props.searchHandle]);
+the hook depends on the function so it needs to be passed in, this is an eslint-plugin-react-hooks warning.
+another solution is to just define the function in useEffect, but since I'm using actions and redux-thunk it is better for organization to just import it.
+
+SCRATCH THAT
+
+    const searchHandle = props.searchHandle;
+
+        useEffect(() => {
+                searchHandle(props.currentProvince)
+    }, [props.currentProvince]);
+
+    it won't use he function if we don't specify to take it from props but useEffect won't allow it in that form without throwing the warning. 
+
+    trying to disable with // eslint-disable-line react-hooks/exhaustive-deps
+
+    
+    __________________________________________
+    _antd built in styles_
+
+    @cardText: ~'ant-card-grid';
+
+@media (max-width: 600px){
+  .@{cardText}{
+    font-size: 3vw ;
+    padding: 0px;
+    align-items: flex-start;
+  }}
+
+  for more info see github.com/ant-design/ant-design/issues/13096
+  
