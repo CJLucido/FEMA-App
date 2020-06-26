@@ -15,17 +15,11 @@ function StateList(props){
     const searchHandle = props.searchHandle;
 
         useEffect(() => {
-                searchHandle(props.currentProvince, props.startDate, props.endDate)
-    }, [props.currentProvince, props.startDate, props.endDate]); // eslint-disable-line react-hooks/exhaustive-deps
+                searchHandle(props.currentProvince, props.startDate)
+    }, [props.currentProvince, props.startDate]); // eslint-disable-line react-hooks/exhaustive-deps
     
+    //, props.endDate removed due to insufficient api
     
-    // const [name, setName] = useState("")
-
-    // const handleNameChange = event => {
-    //     setName(event.target.value)
-    //     props.searchHandle(name)
-    // }
-// <button type="button" onLoad={()=>props.searchHandle(props.currentProvince)}>Test Button to see data</button>
 console.log("this is province", props.currentProvince)
     return(
         <div>

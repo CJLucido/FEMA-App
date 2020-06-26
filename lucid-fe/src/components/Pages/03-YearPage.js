@@ -27,7 +27,7 @@ import {Link} from "react-router-dom";
 import yearMessage from "../../imgs/yearMessageBox.svg";
 import stateReturnButton from "../../imgs/stateReturnButton.svg";
 
-const { RangePicker } = DatePicker;
+// const { RangePicker } = DatePicker;
 
 //THIS FUNCTIONAL COMPONENT
 
@@ -43,10 +43,10 @@ function YearPage(props){
 
 
 async function changeYearRange(dateString){
-        console.log("start", dateString[0])
-        console.log('end', dateString[1])
-        props.changeStart(dateString[0])
-        props.changeEnd(dateString[1])
+        console.log("start", dateString)
+        //console.log('end', dateString[1])
+        props.changeStart(dateString)
+        //props.changeEnd(dateString[1])
 }
 
     const handleYearChange = (value, dateString) => {
@@ -85,7 +85,7 @@ async function changeYearRange(dateString){
                     </div>   
 
                     <div class="year-selector">
-                        <RangePicker picker="year" onChange={handleYearChange}/>
+                        <DatePicker picker="year" onChange={handleYearChange}/>
                     </div>
                     </div>
                     </div>

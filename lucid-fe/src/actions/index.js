@@ -106,12 +106,12 @@ export const fetchStatesUSA= () => dispatch =>{
 //     )
 //   };
 
-  export const searchHandle = (name, startDate, endDate) => dispatch => {
+  export const searchHandle = (name, startDate) => dispatch => {
     
     dispatch(femaLoading());
     console.log("this is search name", name)
     axios
-    .get(`https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'${name}') and declarationDate ge '${startDate}' and disasterCloseOutDate le '${endDate}'`)
+    .get(`https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'${name}') and declarationDate ge '${startDate}' `) //and declarationDate le '${endDate}' removed because api doesn't allow for it
     .then(res =>
     {    console.log('this is the search response', res)
         dispatch(femaLoadSuccess(res.data.DisasterDeclarationsSummaries))}
