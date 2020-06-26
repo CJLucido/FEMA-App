@@ -6,7 +6,8 @@ import {
      FEMA_LOADING,
      CHANGE_PROVINCE,
      CHANGE_START,
-     CHANGE_END
+     CHANGE_END,
+     CHANGE_DR
 } from "../actions";
 
 const initialState = {
@@ -20,6 +21,7 @@ const initialState = {
     currentProvince: "",
     startDate: "1953-01-01T00:00:00.000Z",
     endDate: "2020-12-31T24:60:60.000Z",
+    drNumber: " "
 }
 
 export function reducer(state = initialState, action){
@@ -71,6 +73,11 @@ export function reducer(state = initialState, action){
             return{
                 ...state,
                 endDate: action.payload + "-12-31T24:60:60.000Z"
+            }
+        case CHANGE_DR:
+            return{
+                ...state,
+                drNumber: action.payload
             }
         default:
             return state

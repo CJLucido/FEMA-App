@@ -3,7 +3,14 @@ import {Card} from 'antd';
 
 import {Link} from "react-router-dom";
 
-export default function StateCard(props) {
+import {connect} from "react-redux";
+
+//ACTION FUNCTIONS
+import{
+    changeDR
+} from "../../actions";
+
+function StateCard(props) {
  
     const gridStyle1 = {
         width: '50%',
@@ -19,9 +26,10 @@ export default function StateCard(props) {
 
     //fontsize for smaller cardtext on home.less file
 
-    const handleDRNumber = (event) => {
-      // props.changeProvince(event.currentTarget.id)
-      console.log("wowzers")
+    const handleDRNumber = (data) => {
+     
+      props.changeDR(data)
+      console.log("new DR", data)
   }
 
   return (
@@ -33,8 +41,8 @@ export default function StateCard(props) {
         <Card.Grid style={gridStyle1}>
         Closed: {props.closeDate ? props.closeDate.slice(0,10) : props.closeDate}
         </Card.Grid>
-        <Card.Grid style={gridStyle2}>
-          {props.paProgramDeclared ? <Link to="/categorial" onClick={handleDRNumber}>"PA Support"</Link> : "No PA Support"}
+        <Card.Grid style={gridStyle2} onClick={() => handleDRNumber(props.disasterNumber)}>
+          {props.paProgramDeclared ? <Link to="/categorial" >"PA Support"</Link> : "No PA Support"}
           
           </Card.Grid>
         <Card.Grid style={gridStyle2}>{props.iaProgramDeclared ? "IA Support" : "No IA Support"}</Card.Grid>
@@ -47,3 +55,11 @@ export default function StateCard(props) {
     </Card>
   );
 }
+
+
+const mapDispatchToProps ={
+
+  changeDR
+}
+
+export default connect(state => state, mapDispatchToProps)(StateCard);

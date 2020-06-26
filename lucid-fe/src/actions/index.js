@@ -46,6 +46,8 @@ export const CHANGE_PROVINCE = "CHANGE_PROVINCE";
 export const CHANGE_START = "CHANGE_START";
 
 export const CHANGE_END = "CHANGE_END";
+
+export const CHANGE_DR = "CHANGE_DR";
   
 
 export const femaLoadSuccess = data => ({
@@ -77,6 +79,11 @@ export const changeStart = startDate => ({
 export const changeEnd = endDate => ({
     type: CHANGE_END,
     payload: endDate
+});
+
+export const changeDR = drNumber => ({
+    type: CHANGE_DR,
+    payload: drNumber
 });
 
 export const fetchStatesUSA= () => dispatch =>{
