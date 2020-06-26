@@ -33,38 +33,51 @@ export const functionFailure = (error) => ({type: SOME_FAILURE, payload: error})
 
 // //for more see supportify
 
-export const FEMA_LOAD_SUCCESS = "FEMA_LOAD_SUCCESS"
+export const FEMA_LOAD_SUCCESS = "FEMA_LOAD_SUCCESS";
         
-export const FEMA_LOAD_FAILURE =  "FEMA_LOAD_FAILURE"
+export const FEMA_LOAD_FAILURE =  "FEMA_LOAD_FAILURE";
 
-export const FEMA_LOADING =  "FEMA_LOADING"
+export const FEMA_LOADING =  "FEMA_LOADING";
 
-export const SET_QUERY = "SET_QUERY"
+export const SET_QUERY = "SET_QUERY";
 
-export const CHANGE_PROVINCE = "CHANGE_PROVINCE"
+export const CHANGE_PROVINCE = "CHANGE_PROVINCE";
+
+export const CHANGE_START = "CHANGE_START";
+
+export const CHANGE_END = "CHANGE_END";
   
 
 export const femaLoadSuccess = data => ({
     type: FEMA_LOAD_SUCCESS,
     payload: data
-})
+});
 
 export const femaLoadFailure = data => ({
     type: FEMA_LOAD_FAILURE,
     payload: data
-})
+});
 
 export const femaLoading = () => ({
     type: FEMA_LOADING
-})
+});
 
 
 
 export const changeProvince = currentProvince => ({
     type: CHANGE_PROVINCE,
     payload: currentProvince
-})
+});
  
+export const changeStart = startDate => ({
+    type: CHANGE_START,
+    payload: startDate
+});
+
+export const changeEnd = endDate => ({
+    type: CHANGE_END,
+    payload: endDate
+});
 
 export const fetchStatesUSA= () => dispatch =>{
     dispatch(femaLoading());
@@ -76,14 +89,29 @@ export const fetchStatesUSA= () => dispatch =>{
     .catch(err => {
     dispatch(femaLoadFailure(err))}
     )
-}
+};
 
-export const searchHandle = (name) => dispatch => {
+// export const searchHandle = (name) => dispatch => {
+    
+//     dispatch(femaLoading());
+//     console.log("this is search name", name)
+//     axios
+//     .get(`https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'${name}')`)
+//     .then(res =>
+//     {    console.log('this is the search response', res)
+//         dispatch(femaLoadSuccess(res.data.DisasterDeclarationsSummaries))}
+//     )
+//     .catch(err => {
+//     dispatch(femaLoadFailure(err))}
+//     )
+//   };
+
+  export const searchHandle = (name, startDate, endDate) => dispatch => {
     
     dispatch(femaLoading());
     console.log("this is search name", name)
     axios
-    .get(`https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'${name}')`)
+    .get(`https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$filter=startswith(state,'${name}') and declarationDate ge '${startDate}' and disasterCloseOutDate le '${endDate}'`)
     .then(res =>
     {    console.log('this is the search response', res)
         dispatch(femaLoadSuccess(res.data.DisasterDeclarationsSummaries))}
@@ -91,7 +119,7 @@ export const searchHandle = (name) => dispatch => {
     .catch(err => {
     dispatch(femaLoadFailure(err))}
     )
-  }
+  };
 
 // https://www.fema.gov/api/open/v1/DisasterDeclarationsSummaries?$orderby=state
 

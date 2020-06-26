@@ -15,8 +15,8 @@ function StateList(props){
     const searchHandle = props.searchHandle;
 
         useEffect(() => {
-                searchHandle(props.currentProvince)
-    }, [props.currentProvince]); // eslint-disable-line react-hooks/exhaustive-deps
+                searchHandle(props.currentProvince, props.startDate, props.endDate)
+    }, [props.currentProvince, props.startDate, props.endDate]); // eslint-disable-line react-hooks/exhaustive-deps
     
     
     // const [name, setName] = useState("")

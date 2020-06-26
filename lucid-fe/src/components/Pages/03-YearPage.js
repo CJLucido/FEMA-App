@@ -7,7 +7,9 @@ import{
     somefunction,
     functionFailure,
     searchHandle,
-    changeProvince
+    changeProvince,
+    changeStart,
+    changeEnd
 } from "../../actions";
 
 //STYLE COMING FROM LESS CLASSES AND ANTD COMPONENTS
@@ -38,15 +40,27 @@ function YearPage(props){
 //         console.log(props.currentProvince)
 // }, [props.currentProvince]);
 
-    // const handleYearChange = (event) => {
-    //     props.changeYearRange(event.target.value)
-    // }
+
+
+async function changeYearRange(dateString){
+        console.log("start", dateString[0])
+        console.log('end', dateString[1])
+        props.changeStart(dateString[0])
+        props.changeEnd(dateString[1])
+}
+
+    const handleYearChange = (value, dateString) => {
+        changeYearRange(dateString)
+        
+    }
 
     const handleStateRefresh = (event) => {
         props.changeProvince("");
         console.log(props.currentProvince)
         
     }
+
+
     return(
         <div>
             <section id="years">
@@ -71,7 +85,7 @@ function YearPage(props){
                     </div>   
 
                     <div class="year-selector">
-                        <RangePicker picker="year"/>
+                        <RangePicker picker="year" onChange={handleYearChange}/>
                     </div>
                     </div>
                     </div>
@@ -92,7 +106,9 @@ const mapDispatchToProps ={
     somefunction,
     functionFailure,
     searchHandle,
-    changeProvince
+    changeProvince,
+    changeStart,
+    changeEnd
 }
 
 export default connect(state => state, mapDispatchToProps)(YearPage);
