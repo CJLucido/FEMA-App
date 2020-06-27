@@ -54,6 +54,8 @@ export const PW_LOAD_SUCCESS = "PW_LOAD_SUCCESS";
 export const PW_LOAD_REDIRECT = "PW_LOAD_REDIRECT";
 
 export const CHANGE_CAT = "CHANGE_CAT";
+
+export const UPDATE_SUMS_OBLIGATED = "UPDATE_SUMS_OBLIGATED";
   
 
 export const femaLoadSuccess = data => ({
@@ -105,13 +107,19 @@ export const changeCat = category => ({
 export const pwLoadSuccess = data => ({
     type:PW_LOAD_SUCCESS,
     payload: data
-})
+});
 
 
 export const pwLoadRedirect = data => ({
     type:PW_LOAD_REDIRECT,
     payload: data
-})
+});
+
+export const updateSumsObligated = (totalObligated, totalFedObligated) => ({
+    type: UPDATE_SUMS_OBLIGATED,
+    payload1: totalObligated,
+    payload2: totalFedObligated
+});
 
 ///////////////////////////////////////////////////
 
@@ -153,6 +161,14 @@ export const fetchStatesUSA= () => dispatch =>{
             {unique.push(drAvailable)}
         })
         return unique;
+    };
+
+    function sumArray(data){
+        let sum = data.reduce(function(a, b){
+            return a + b;
+        },0);
+
+        return sum
     }
 
 
@@ -161,7 +177,20 @@ export const fetchStatesUSA= () => dispatch =>{
     axios
     .get(`https://www.fema.gov/api/open/v1/PublicAssistanceFundedProjectsDetails?$filter=startswith(stateCode,'${name}') and disasterNumber eq ${parseInt(drNumber)} and dcc eq '${category}' `) 
     .then(res =>
-    {    
+    {   
+    
+        const obligatedArr = res.data.PublicAssistanceFundedProjectsDetails.map(item => {
+            return item.totalObligated
+            });
+        const obligatedFedArr = res.data.PublicAssistanceFundedProjectsDetails.map(item => {
+            return item.federalShareObligated
+            });
+        
+        const sumTotalObligated = sumArray(obligatedArr);
+        const sumFedObligated = sumArray(obligatedFedArr);
+
+        dispatch(updateSumsObligated(sumTotalObligated, sumFedObligated));
+
         if(res.data.PublicAssistanceFundedProjectsDetails.length > 0){
             console.log('this is the search response', res)
             dispatch(pwLoadSuccess(res.data.PublicAssistanceFundedProjectsDetails))

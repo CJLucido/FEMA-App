@@ -52,7 +52,7 @@ console.log("this is province", props.currentProvince)
                     applicantId={item.applicantId}
                     projectAmount={item.projectAmount}
                     federalShareObligated={item.federalShareObligated}
-                    totalObligated={item.totalObligated}
+                    totalObligatedPW={item.totalObligated}
                     />
                 )
 /*             

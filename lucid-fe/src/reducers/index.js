@@ -10,7 +10,8 @@ import {
      CHANGE_DR,
      PW_LOAD_SUCCESS,
      PW_LOAD_REDIRECT,
-     CHANGE_CAT
+     CHANGE_CAT,
+     UPDATE_SUMS_OBLIGATED
 } from "../actions";
 
 const initialState = {
@@ -102,6 +103,12 @@ export function reducer(state = initialState, action){
             return{
                 ...state,
                 category: action.payload
+            }
+        case UPDATE_SUMS_OBLIGATED:
+            return{
+                ...state,
+                totalObligated: action.payload1,
+                totalFederal: action.payload2
             }
         default:
             return state
