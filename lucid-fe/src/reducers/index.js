@@ -9,6 +9,7 @@ import {
      CHANGE_END,
      CHANGE_DR,
      PW_LOAD_SUCCESS,
+     PW_LOAD_REDIRECT,
      CHANGE_CAT
 } from "../actions";
 
@@ -29,6 +30,7 @@ const initialState = {
 
     totalObligated: 0,
     totalFederal: 0,
+    statesAvailableDRs: []
 }
 
 export function reducer(state = initialState, action){
@@ -90,6 +92,11 @@ export function reducer(state = initialState, action){
             return{
                 ...state,
                 projectWorksheets: action.payload
+            }
+        case PW_LOAD_REDIRECT:
+            return{
+                ...state,
+                statesAvailableDRs: action.payload
             }
         case CHANGE_CAT:
             return{

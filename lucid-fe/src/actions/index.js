@@ -51,6 +51,8 @@ export const CHANGE_DR = "CHANGE_DR";
 
 export const PW_LOAD_SUCCESS = "PW_LOAD_SUCCESS";
 
+export const PW_LOAD_REDIRECT = "PW_LOAD_REDIRECT";
+
 export const CHANGE_CAT = "CHANGE_CAT";
   
 
@@ -106,6 +108,11 @@ export const pwLoadSuccess = data => ({
 })
 
 
+export const pwLoadRedirect = data => ({
+    type:PW_LOAD_REDIRECT,
+    payload: data
+})
+
 ///////////////////////////////////////////////////
 
 export const fetchStatesUSA= () => dispatch =>{
@@ -139,13 +146,47 @@ export const fetchStatesUSA= () => dispatch =>{
 
   export const pwHandle = (name, drNumber, category) => dispatch => {
     
+    function removeDuplicates(data){
+        let unique = [];
+        data.forEach(drAvailable => {
+            if(!unique.includes(drAvailable))
+            {unique.push(drAvailable)}
+        })
+        return unique;
+    }
+
+
     dispatch(femaLoading());
     console.log("this is search name", name)
     axios
     .get(`https://www.fema.gov/api/open/v1/PublicAssistanceFundedProjectsDetails?$filter=startswith(stateCode,'${name}') and disasterNumber eq ${parseInt(drNumber)} and dcc eq '${category}' `) 
     .then(res =>
-    {    console.log('this is the search response', res)
-        dispatch(pwLoadSuccess(res.data.PublicAssistanceFundedProjectsDetails))}
+    {    
+        if(res.data.PublicAssistanceFundedProjectsDetails.length > 0){
+            console.log('this is the search response', res)
+            dispatch(pwLoadSuccess(res.data.PublicAssistanceFundedProjectsDetails))
+            dispatch(pwLoadRedirect([]))
+        }
+        else{
+            axios
+            .get(`https://www.fema.gov/api/open/v1/PublicAssistanceFundedProjectsDetails?$filter=startswith(stateCode,'${name}')`)
+            .then( res => {
+                console.log('this is the search response lower', res)
+                const drAvailable = res.data.PublicAssistanceFundedProjectsDetails.map(item => {
+                    return item.disasterNumber
+                });
+               const statesDRs = removeDuplicates(drAvailable);
+                dispatch(pwLoadRedirect(statesDRs))
+                dispatch(pwLoadSuccess([]))
+
+            })
+            .catch(err => {
+                console.log("lower failure")
+                dispatch(femaLoadFailure(err))}
+                )
+        }
+    
+    }
     )
     .catch(err => {
     dispatch(femaLoadFailure(err))}

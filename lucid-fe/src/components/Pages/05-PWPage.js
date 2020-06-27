@@ -48,7 +48,7 @@ function PWPage(props){
         console.log(props.currentProvince)
         
     }
-
+console.log(props.statesAvailableDRs)
 
     return(
         <div>
@@ -84,6 +84,7 @@ function PWPage(props){
 
                         <div class="s3-c-years-text">
                         <PWList/>
+               {props.statesAvailableDRs.length > 0 ? <p style={{margin: "10%" }}>We're sorry, for the state of {props.currentProvince} the government has only provided PW information for the following Disasters(DR) or Emergencies(EM): {props.statesAvailableDRs.join(", ")}. This site will update automatically as they publish information.</p> : <p></p>}
                         </div>
                    </div>
             </section>
