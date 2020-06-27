@@ -446,3 +446,10 @@ SCRATCH THAT
 
   for more info see github.com/ant-design/ant-design/issues/13096
   
+
+  ____________________________________
+  _reusing styles_
+
+  future pages should follow the same pattern of the year page, the category page, or a mixture of the 2
+
+  reuse their less files for faster turn around, exemplified by PWPage

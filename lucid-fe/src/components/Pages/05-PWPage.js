@@ -9,10 +9,12 @@ import{
     searchHandle,
     changeProvince,
     changeStart,
-    changeEnd
+    changeEnd,
+    changeCat
 } from "../../actions";
 
 //STYLE COMING FROM LESS CLASSES AND ANTD COMPONENTS
+//STYLE CLASSES COME FROM YEAR AND CATEGORY LESS FILES
 
 //Molecules
 import TotalsCard from "../Molecules/TotalsCard";
@@ -27,8 +29,8 @@ import {Link} from "react-router-dom";
 
 //import yearMessage from "../../imgs/yearMessageBox.svg";
 import stateReturnButton from "../../imgs/stateReturnButton.svg";
+import catReturnButton from "../../imgs/catReturnButton.svg";
 
-// const { RangePicker } = DatePicker;
 
 //THIS FUNCTIONAL COMPONENT
 
@@ -48,6 +50,14 @@ function PWPage(props){
         console.log(props.currentProvince)
         
     }
+
+    const handleCategoryRefresh = (event) => {
+        props.changeCat("");
+       
+        
+    }
+
+
 console.log(props.statesAvailableDRs)
 
     return(
@@ -58,6 +68,8 @@ console.log(props.statesAvailableDRs)
                     <div class="grid-years">
                     <div class="flex-box-year s3-a-title">
                      <h1>{props.currentProvince} PA Finder</h1>
+                    </div>
+                    <div class="year-instructions-box">
                     <h2>Category {props.category}</h2>
                     <h2>_______________</h2>
                     <h2>DR {props.drNumber}</h2>
@@ -73,9 +85,10 @@ console.log(props.statesAvailableDRs)
                      </Link>
                     </div>   
 
-                    <div class="flex-box-year s3-d-instruction">
-                     <p>When the DR appears, you can click on the  “Support” for more information.</p>
-                    </div>   
+                    <div class="flex-box-year s4-d-backlink2">
+                    <Link to="/categorial">
+                     <img onClick={handleCategoryRefresh} src={catReturnButton} alt="box with unclosed corners giving direction to choose a category from the list"/>
+                     </Link>                    </div>   
 
                         <TotalsCard/>
 
@@ -101,7 +114,8 @@ const mapDispatchToProps ={
     searchHandle,
     changeProvince,
     changeStart,
-    changeEnd
+    changeEnd,
+    changeCat
 }
 
 export default connect(state => state, mapDispatchToProps)(PWPage);
