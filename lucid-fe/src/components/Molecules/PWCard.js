@@ -27,7 +27,7 @@ function PWCard(props) {
     //fontsize for smaller cardtext on home.less file
 
   return (
-    <Card style={{padding:"0 0 0 0", margin:"1em",backgroundColor:"#000025", borderRadius:"00px", boxShadow:"0px 4px 4px rgba(0,0,0,0.25)", maxWidth: "95vw"}}>
+    <Card style={{padding:"0 0 0 0", margin:"1em",backgroundColor:"#000000", borderRadius:"10px", boxShadow:"0px 4px 4px rgba(0,0,0,0.25)", maxWidth: "95vw"}}>
     <Card class="cardText2" style={{padding:"0 0 0 0", backgroundColor:"gray", borderRadius:"00px"}} title={"Obligated: " + props.obligatedDate.slice(0,10)}>
         <Card.Grid class="cardText" style={gridStyle1}>
         PW: {props.pwNumber}<br/>
@@ -41,7 +41,7 @@ function PWCard(props) {
           
           </Card.Grid>
         <Card.Grid style={gridStyle2}>Federal<br/>Share<br/> Obligated: <br/>{props.federalShareObligated}</Card.Grid>
-        <Card.Grid style={gridStyle2}>Total<br/>Obligated: <br/>{props.totalObligated}</Card.Grid>
+        <Card.Grid style={gridStyle2}>Total<br/>Obligated: <br/>{props.totalObligatedPW}</Card.Grid>
 
   
   {/* <Card.Grid style={gridStyle2}>{props.stateName}</Card.Grid> */}

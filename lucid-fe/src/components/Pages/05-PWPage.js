@@ -9,10 +9,12 @@ import{
     searchHandle,
     changeProvince,
     changeStart,
-    changeEnd
+    changeEnd,
+    changeCat
 } from "../../actions";
 
 //STYLE COMING FROM LESS CLASSES AND ANTD COMPONENTS
+//STYLE CLASSES COME FROM YEAR AND CATEGORY LESS FILES
 
 //Molecules
 import TotalsCard from "../Molecules/TotalsCard";
@@ -25,10 +27,10 @@ import {Link} from "react-router-dom";
 
 //imgs
 
-import yearMessage from "../../imgs/yearMessageBox.svg";
+//import yearMessage from "../../imgs/yearMessageBox.svg";
 import stateReturnButton from "../../imgs/stateReturnButton.svg";
+import catReturnButton from "../../imgs/catReturnButton.svg";
 
-// const { RangePicker } = DatePicker;
 
 //THIS FUNCTIONAL COMPONENT
 
@@ -49,6 +51,14 @@ function PWPage(props){
         
     }
 
+    const handleCategoryRefresh = (event) => {
+        props.changeCat("");
+       
+        
+    }
+
+
+console.log(props.statesAvailableDRs)
 
     return(
         <div>
@@ -58,6 +68,8 @@ function PWPage(props){
                     <div class="grid-years">
                     <div class="flex-box-year s3-a-title">
                      <h1>{props.currentProvince} PA Finder</h1>
+                    </div>
+                    <div class="year-instructions-box">
                     <h2>Category {props.category}</h2>
                     <h2>_______________</h2>
                     <h2>DR {props.drNumber}</h2>
@@ -73,9 +85,10 @@ function PWPage(props){
                      </Link>
                     </div>   
 
-                    <div class="flex-box-year s3-d-instruction">
-                     <p>When the DR appears, you can click on the  “Support” for more information.</p>
-                    </div>   
+                    <div class="flex-box-year s4-d-backlink2">
+                    <Link to="/categorial">
+                     <img onClick={handleCategoryRefresh} src={catReturnButton} alt="box with unclosed corners giving direction to choose a category from the list"/>
+                     </Link>                    </div>   
 
                         <TotalsCard/>
 
@@ -84,6 +97,7 @@ function PWPage(props){
 
                         <div class="s3-c-years-text">
                         <PWList/>
+               {props.statesAvailableDRs.length > 0 ? <p >We're sorry, for the state of {props.currentProvince} the government has only provided PW information for the following Disasters(DR) or Emergencies(EM): {props.statesAvailableDRs.join(", ")}. This site will update automatically as they publish information.</p> : <p></p>}
                         </div>
                    </div>
             </section>
@@ -100,7 +114,8 @@ const mapDispatchToProps ={
     searchHandle,
     changeProvince,
     changeStart,
-    changeEnd
+    changeEnd,
+    changeCat
 }
 
 export default connect(state => state, mapDispatchToProps)(PWPage);

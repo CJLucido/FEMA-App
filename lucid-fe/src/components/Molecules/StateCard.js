@@ -33,7 +33,7 @@ function StateCard(props) {
   }
 
   return (
-    <Card style={{padding:"0 0 0 0", margin:"1em",backgroundColor:"#000025", borderRadius:"00px", boxShadow:"0px 4px 4px rgba(0,0,0,0.25)", maxWidth: "85vw"}}>
+    <Card style={{padding:"0 0 0 0", margin:"1em",backgroundColor:"#000000", borderRadius:"10px", boxShadow:"0px 4px 4px rgba(0,0,0,0.25)", maxWidth: "85vw"}}>
     <Card class="cardText" style={{padding:"0 0 0 0", backgroundColor:"gray", borderRadius:"00px"}} title={props.disasterType + " " + props.disasterNumber + " " + props.titleDR}>
         <Card.Grid class="cardText" style={gridStyle1}>
         Began: {props.beganDate ? props.beganDate.slice(0,10) : props.beganDate}

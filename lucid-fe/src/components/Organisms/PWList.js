@@ -52,7 +52,7 @@ console.log("this is province", props.currentProvince)
                     applicantId={item.applicantId}
                     projectAmount={item.projectAmount}
                     federalShareObligated={item.federalShareObligated}
-                    totalObligated={item.totalObligated}
+                    totalObligatedPW={item.totalObligated}
                     />
                 )
 /*             
@@ -66,7 +66,6 @@ console.log("this is province", props.currentProvince)
                 </Row>
             </Divider>
             {props.error && <p>{props.error.message}</p>}
-            {props.isFetching && <p>Come on now, we don't have that kind of time</p>}
         </div>
 
 
