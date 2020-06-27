@@ -92,12 +92,36 @@ section#years .grid-years{
         margin-top: 2vw;
         margin-left: 2vw;
     }
+
+    @media (max-width: 600px){
     .s3-c-years-text{ 
         grid-column: 1 / span 6;
         grid-row: 10 / span auto;
         margin-top: 50%;
         padding: 0em;
+
+        p{
+            margin-top: 50%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
     }
+}
+
+@media (min-width: 601px){
+    .s3-c-years-text{ 
+        grid-column: 1 / span 6;
+        grid-row: 10 / span auto;
+        margin-top: 30%;
+        padding: 0em;
+
+        p{
+            margin-top: 10%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+    }
+}
     
     @media (max-width: 600px){
     .s3-d-instruction{
