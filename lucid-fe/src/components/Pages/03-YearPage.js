@@ -85,7 +85,7 @@ async function changeYearRange(dateString){
                     </div>   
 
                     <div class="year-selector">
-                        <DatePicker picker="year" onChange={handleYearChange}/>
+                        <DatePicker picker="year" onChange={handleYearChange} placeholder="From year"/>
                     </div>
                     </div>
                     </div>
