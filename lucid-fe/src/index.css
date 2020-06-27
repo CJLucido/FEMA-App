@@ -502,6 +502,9 @@ section#years .grid-years {
     margin-right: 2vw;
     font-size: smaller;
   }
+  .s3-d-instruction p {
+    font-size: 3vw;
+  }
 }
 @media (min-width: 601px) {
   .s3-d-instruction {
