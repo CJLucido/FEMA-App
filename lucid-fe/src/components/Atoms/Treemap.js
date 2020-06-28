@@ -93,7 +93,7 @@ function TreeMap(props) {
     }
 
     draw();
-    }, [])
+    }, [props.category, props.currentProvince, props.drNumber])
 
   return (
         <div id="parentDiv" style={{width:"300vw", height:"300vh"}}>
