@@ -93,7 +93,7 @@ function TreeMap(props) {
 
     useEffect(() => {
         draw();//JSON.stringify(props.funding)
-    }, [props.funding])
+    }, [draw])// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
         <div id="parentDiv" style={{width:"300vw", height:"300vh"}}>
