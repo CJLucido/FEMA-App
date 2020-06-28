@@ -12,6 +12,10 @@ import{
 
 //STYLE COMING FROM LESS CLASSES AND ANTD COMPONENTS
 
+//Atoms
+// import TreeMap from "../Atoms/Treemap";
+
+
 //PAGES
 import {Link} from "react-router-dom";
 
@@ -360,8 +364,10 @@ function StatesPage(props){
                         <img src={wyomingButton} alt="circle surrounding state abbreviation" />
                         </Link>
                     </div>
-
+       
+                    
                    </div>
+                   
             </section>
         </div>
         
