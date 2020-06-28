@@ -11,7 +11,8 @@ import {
      PW_LOAD_SUCCESS,
      PW_LOAD_REDIRECT,
      CHANGE_CAT,
-     UPDATE_SUMS_OBLIGATED
+     UPDATE_SUMS_OBLIGATED,
+     PW_FUNDING
 } from "../actions";
 
 const initialState = {
@@ -31,7 +32,8 @@ const initialState = {
 
     totalObligated: 0,
     totalFederal: 0,
-    statesAvailableDRs: []
+    statesAvailableDRs: [],
+    funding:{"children":[{"PW":"1","value":"300"},{"PW":"2","value":"150"},{"PW":"3","value":"200"}]}
 }
 
 export function reducer(state = initialState, action){
@@ -109,6 +111,11 @@ export function reducer(state = initialState, action){
                 ...state,
                 totalObligated: action.payload1,
                 totalFederal: action.payload2
+            }
+        case PW_FUNDING:
+            return{
+                ...state,
+                funding:JSON.stringify({"children": [action.payload]})
             }
         default:
             return state

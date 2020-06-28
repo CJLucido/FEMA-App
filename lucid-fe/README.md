@@ -453,3 +453,14 @@ SCRATCH THAT
   future pages should follow the same pattern of the year page, the category page, or a mixture of the 2
 
   reuse their less files for faster turn around, exemplified by PWPage
+
+  ____________________________________
+  _d3_
+
+  d3.hierarchy will only consider actual JSON
+  and expects a children parent over the objects
+
+  JSON.parse will not consider "{'children':" as true JSON
+    need to change it to `{"children":`
+
+    

@@ -20,6 +20,8 @@ import YearPage from "./components/Pages/03-YearPage";
 import CategoryPage from "./components/Pages/04-CategoryPage";
 import PWPage from "./components/Pages/05-PWPage";
 
+import TreeMap from "./components/Atoms/Treemap";
+
 import {connect} from "react-redux";
 
 //ACTION FUNCTIONS
@@ -66,6 +68,9 @@ function App() {
           <Route path='/projectworksheets'>
             <PWPage/>
           </Route> 
+          <Route path='/treemap'>
+            <TreeMap/>
+          </Route>
 
       </Switch>
     </div>

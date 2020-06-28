@@ -57,6 +57,7 @@ export const CHANGE_CAT = "CHANGE_CAT";
 
 export const UPDATE_SUMS_OBLIGATED = "UPDATE_SUMS_OBLIGATED";
   
+export const PW_FUNDING = "PW_FUNDING";
 
 export const femaLoadSuccess = data => ({
     type: FEMA_LOAD_SUCCESS,
@@ -121,7 +122,37 @@ export const updateSumsObligated = (totalObligated, totalFedObligated) => ({
     payload2: totalFedObligated
 });
 
+export const pwFunding = data => ({
+    type: PW_FUNDING,
+    payload: data
+})
+
 ///////////////////////////////////////////////////
+
+export const fundingHandle = (name, drNumber, category) => dispatch => {
+    
+    const config = {
+        headers:{
+            'accept': "application/json"
+        }
+    }
+
+    dispatch(femaLoading());
+    console.log("this is search name funding", name)
+    axios
+    .get(`https://www.fema.gov/api/open/v1/PublicAssistanceFundedProjectsDetails?$filter=startswith(stateCode,'${name}') and disasterNumber eq ${parseInt(drNumber)} and dcc eq '${category}'`, config) //and declarationDate le '${endDate}' removed because api doesn't allow for it
+    .then(res =>
+    {    console.log('this is the search response', res)
+
+    const fundingArr = res.data.PublicAssistanceFundedProjectsDetails.map(item => {
+        return {"PW" : item.pwNumber, "value" : item.federalShareObligated}
+        });
+        dispatch(pwFunding(fundingArr))}
+    )
+    .catch(err => {
+    dispatch(femaLoadFailure(err))}
+    )
+  };
 
 export const fetchStatesUSA= () => dispatch =>{
     dispatch(femaLoading());

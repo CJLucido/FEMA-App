@@ -1,8 +1,16 @@
-import React from 'react';
+import React, {useEffect}  from 'react';
 //, {useEffect} 
 import {Card, Collapse} from 'antd';
 
 import {connect} from "react-redux";
+
+import {Link} from "react-router-dom";
+
+//import TreeMap from "../Atoms/Treemap";
+
+import{
+    fundingHandle
+} from "../../actions";
 
 function TotalsCard(props) {
  
@@ -20,7 +28,13 @@ function TotalsCard(props) {
 
     const {Panel} = Collapse;
 
+    const fundingHandle = props.fundingHandle;
 
+    useEffect(() => {
+        fundingHandle(props.currentProvince, props.drNumber, props.category)
+}, [props.currentProvince, props.drNumber, props.category]); // eslint-disable-line react-hooks/exhaustive-deps
+
+   
   return (
 
                     <div class="year-selector">
@@ -34,12 +48,18 @@ function TotalsCard(props) {
                                     Total Federal Share Obligated: {props.totalFederal}
                                 </Card>
                             </Panel>
+                           
+
+                            
                         </Collapse>
+                        <Link to="/treemap">
+                                    PW Map (per Federal Share)
+                                </Link>
                     </div>
   )};
                     
 const mapDispatchToProps ={
-
+    fundingHandle
   
   }
   
