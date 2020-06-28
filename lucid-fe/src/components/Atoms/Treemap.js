@@ -19,7 +19,8 @@ function TreeMap(props) {
     const ref = useRef();
 
     //const parentDiv = document.getElementById("parentDiv");
-
+    useEffect(() => {
+     //JSON.stringify(props.funding)
     function draw(){
         let width = ref.current.clientWidth;
         let height = ref.current.clientHeight;
@@ -91,9 +92,8 @@ function TreeMap(props) {
 
     }
 
-    useEffect(() => {
-        draw();//JSON.stringify(props.funding)
-    }, [draw])// eslint-disable-line react-hooks/exhaustive-deps
+    draw();
+    }, [])
 
   return (
         <div id="parentDiv" style={{width:"300vw", height:"300vh"}}>
