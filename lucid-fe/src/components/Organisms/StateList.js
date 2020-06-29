@@ -6,7 +6,7 @@ import {fetchStatesUSA, searchHandle} from "../../actions"
 import StateCard from "../Molecules/StateCard";
 
 
-import {Row, Col, Divider} from 'antd';
+import {Row, Col, Divider, Spin} from 'antd';
 
 
 
@@ -62,7 +62,7 @@ console.log("this is province", props.currentProvince)
                 </Row>
             </Divider>
             {props.error && <p>{props.error.message}</p>}
-            {props.isFetching && <p>Come on now, we don't have that kind of time</p>}
+            {props.isFetching && <Spin/>}
         </div>
 
 
