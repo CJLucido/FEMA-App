@@ -5,6 +5,8 @@ import {connect} from "react-redux";
 
 import {Link} from "react-router-dom";
 
+import {Alert} from 'antd';
+
 //ACTION FUNCTIONS
 import{
     changeDR
@@ -18,7 +20,6 @@ function TreeMap(props) {
  
     const ref = useRef();
 
-    //const parentDiv = document.getElementById("parentDiv");
     useEffect(() => {
      //JSON.stringify(props.funding)
     function draw(){
@@ -44,14 +45,14 @@ function TreeMap(props) {
 
         const data4 = `{"children":` + JSON.stringify(fundingArr) + "}"
   
-        console.log("data4", data4)
+       // console.log("data4", data4)
 
         const data5 = JSON.parse(data4)
         var root = d3.hierarchy(data5).sum(function(d){
             //console.log('d', d.value)
             return d.value})
 
-    console.log("root", root)
+    //console.log("root", root)
 
 
 
@@ -59,7 +60,26 @@ function TreeMap(props) {
             .size([width, height])
             .padding(2)
             (root)
+
+        const tooltip = d3.select('body')
+                         .data(root.leaves())
+                        .enter()
+                        .append('div')
+                        .style("position", "fixed")
+                        .style("z-index", "10")
+                        .style("top", "0")
+                        .style("left", "0")
+                        .style("visibility", "hidden")
+                        .style('background', "#fff")
+                        .style("font-size", "5vw")
+                        .text(function(d){ 
+                           // console.log("PW", d.data)
+                        return "PW:" + d.data.PW})
+                        // .text(function(d){ 
+                        // return "Federal:" + d.data.value + "/" + props.totalFederal});
     
+
+
         svg
             .selectAll("rect")
             .data(root.leaves())
@@ -71,20 +91,32 @@ function TreeMap(props) {
             .attr('height', function (d) { return d.y1 - d.y0; })
             .style("stroke", "white")
             .style("fill", "black")
-      
+            .on('mouseover', function(d){
+                console.log("tooltip",d)
+                tooltip.text("PW:" + d.data.PW); return tooltip.style("visibility", "visible")//("fontSize", "3vw")
+            })
+            .on("mouseout", function(){return tooltip.style("visibility","hidden")})
+            .on('click', function(d){
+                return tooltip.style("visibility","visible")})            
+            .on('dblclick', function(d){
+                    return tooltip.style("visibility","hidden")})   
+  
+
+
         // and to add the text labels
-        svg
-          .selectAll("text")
-          .data(root.leaves())
-          .enter()
-          .append("text")
-            .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-            .attr("y", function(d){ return d.y0+17})    // +20 to adjust position (lower)
-            .text(function(d){ 
-                console.log("PW", d.data)
-                return d.data.PW })
-            .attr("font-size", ".75vw")
-            .attr("fill", "red")
+//         svg
+//           .selectAll("text")
+//           .data(root.leaves())
+//           .enter()
+//           .append("text")
+//             .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
+//             .attr("y", function(d){ return d.y0+17})    // +20 to adjust position (lower)
+//             .text(function(d){ 
+//                 console.log("PW", d.data)
+//             return "PW:" + d.data.PW
+//  })
+//             .attr("font-size", ".75vw")
+//             .attr("fill", "red")
 
 
             return root
@@ -93,18 +125,22 @@ function TreeMap(props) {
     }
 
     draw();
-    }, [props.category, props.currentProvince, props.drNumber])
+
+    }, [ props.category, props.currentProvince, props.drNumber])
 
   return (
         <div id="parentDiv" style={{width:"300vw", height:"300vh"}}>
-            <div style={{position:"fixed", zIndex:"2000", marginLeft:"80%", marginTop:"5%"}}>
+            <div class="pwReturn">
                 <Link to="/projectworksheets">
                 <img src={pwReturnButton} alt="box with unclosed corners giving direction to return to previous page"/>
                 </Link>
             </div>
-           
+           <Alert message="Zoom out suggested" type="info" showIcon closable style={{zIndex:"2000", position: "fixed", maxWidth:"20%", marginLeft: "0%", marginTop: "1%"}}/>
+           <Alert message="Double Click to unselect PW" type="info" showIcon closable style={{zIndex:"2000", position: "fixed", maxWidth:"20%", marginLeft: "0%", marginTop: "5%"}}/>
             <svg ref={ref} style={{width:"300vw", height:"300vh"}}>
+
             </svg>
+
 
         </div>
   );

@@ -32,12 +32,14 @@ conditionally render a list of PWs there is info for for each state and show tha
  fix styling of last page upper right corner
  remove text block from last page and replace with yearReturnButton
 
+ change size of card text for mobile?
+
  //stretch
  make treemap of obligations
 
  clean up code, delete unnecessaries, improve styling (minor tweaks to things like the PW Map button)
  Also, add to portfolio
- 
+
 
 
 

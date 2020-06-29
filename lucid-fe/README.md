@@ -463,4 +463,8 @@ SCRATCH THAT
   JSON.parse will not consider "{'children':" as true JSON
     need to change it to `{"children":`
 
-    
+________________________________________
+_svg + React components_
+react components cannot be appended/created during rectangle or text creation of d3 svgs (such as PER rectangle)
+
+easier to simply create a tooltip using svg built-in abilities 

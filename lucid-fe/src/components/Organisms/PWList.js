@@ -6,7 +6,7 @@ import { pwHandle} from "../../actions"
 import PWCard from "../Molecules/PWCard";
 
 
-import {Row, Col, Divider} from 'antd';
+import {Row, Col, Divider, Spin} from 'antd';
 
 
 
@@ -66,6 +66,7 @@ console.log("this is province", props.currentProvince)
                 </Row>
             </Divider>
             {props.error && <p>{props.error.message}</p>}
+            {props.isFetching && <Spin/>}
         </div>
 
 

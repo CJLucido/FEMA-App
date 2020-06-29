@@ -8,6 +8,7 @@ section#home .grid-home {
   margin: 1em;
   grid-gap: 0em;
   min-height: 100vh;
+  max-width: 100vw;
 }
 .flex-box1 {
   display: flex;
@@ -23,6 +24,7 @@ section#home .grid-home {
   justify-content: flex-start;
   margin-bottom: none;
   align-items: center;
+  max-width: 50%;
 }
 .flex-box2 h2 {
   display: flex;
@@ -33,14 +35,14 @@ section#home .grid-home {
   .flex-box2 p {
     padding-left: 0.5em;
     text-align: left;
-    font-size: 4vw;
+    font-size: 2vw;
     color: #000000;
     margin-bottom: none;
   }
 }
 @media (min-width: 601px) {
   .flex-box2 p {
-    padding-left: 0.5em;
+    padding-left: 2em;
     text-align: left;
     font-size: 2vw;
     color: #000000;
@@ -56,6 +58,7 @@ section#home .grid-home {
   margin-bottom: none;
   align-self: flex-start;
   align-items: center;
+  max-width: 50%;
 }
 .flex-box3 h2 {
   display: flex;
@@ -66,7 +69,7 @@ section#home .grid-home {
   .flex-box3 p {
     padding-left: 0em;
     text-align: left;
-    font-size: 4vw;
+    font-size: 2vw;
     color: #000000;
     margin-bottom: none;
   }
@@ -81,11 +84,13 @@ section#home .grid-home {
   }
 }
 .flex-box3 img {
-  padding-right: 2em;
+  padding-right: 0em;
+  padding-left: 2em;
 }
 .grid-home .grid-box {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+  max-width: 100vw;
 }
 .s1-a-title {
   grid-column: auto / span 2;
@@ -151,6 +156,22 @@ section#home .grid-home {
     font-size: 1vw ;
     align-items: flex-start;
     height: 100%;
+  }
+}
+@media (min-width: 601px) {
+  .pwReturn {
+    position: fixed;
+    z-index: 2000;
+    margin-left: 80%;
+    margin-top: 15%;
+  }
+}
+@media (max-width: 600px) {
+  .pwReturn {
+    position: fixed;
+    z-index: 2000;
+    margin-left: 20%;
+    margin-top: 15%;
   }
 }
 section#states .grid-states {
